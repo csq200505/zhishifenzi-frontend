@@ -13,7 +13,7 @@
 
 (1) intelij 系列ide，如 idea，pycharm等
 
-* 文件-->新建-->来自版本控制的项目-->
+* 文件-->新建-->来自版本控制的项目-->输入URL：https://github.com/csq200505/zhishifenzi-frontend.git
 
 (2) 其他ide
 
@@ -97,5 +97,5 @@ zhishifenzi > dist > dev > mp-weixin
 
 千万不要回滚git操作，可能会把别人提交的文件弄丢，git操作只需要拉取、提交、推送
 
-还要注意两个人不要提交
+还要注意两个人不要提交同一个文件，可能会导致冲突
 
