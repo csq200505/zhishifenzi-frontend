@@ -1,6 +1,8 @@
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png"></image>
+    <image class="logo" src="/static/logo.png"
+      v-on:click="toPos"
+    ></image>
     <view class="text-area">
       <text class="title">{{ title }}</text>
     </view>
@@ -15,7 +17,14 @@ export default {
     }
   },
   onLoad() {},
-  methods: {},
+  methods: {
+    toPos: () => {
+      //测试时，将这里的页面路径改成你需要测试的页面
+      uni.navigateTo({
+       url: '../startpage/index'
+      })
+    }
+  },
 }
 </script>
 
