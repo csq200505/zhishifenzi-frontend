@@ -9,7 +9,7 @@
                 <switch type="checkbox" checked="{{switch2Checked}}" bindchange="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   
         </view>
-       
+
         <view class="type2">
             <image class="item2" src="/static/item2.jpg"></image> 
             <h1 class="text2">汉堡薯条</h1>
@@ -65,7 +65,6 @@
                 <switch type="checkbox" checked="{{switch2Checked}}" bindchange="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   
         </view>
-
     </view>
     
 
