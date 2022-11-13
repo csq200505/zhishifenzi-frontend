@@ -1,10 +1,7 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/default/index",
-			"style": {
-				"navigationBarTitleText": "uni-app"
-			}
+			"path": "pages/default/index"
 		},
 		{
 			"path": "pages/startpage/index"
@@ -19,10 +16,55 @@
 			"path": "pages/homepage/index"
 		}
 	],
+
+	"condition":{
+		"current": 0,
+		"list": [{
+			"name": "test",
+			"path": "pages/homepage/index"
+		}]
+},
+
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
 		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#999",
+		"selectedColor": "#3D98FF",
+		"backgroundColor": "#fff",
+		"borderStyle": "white",
+		"list": [
+			{
+				"selectedIconPath": "./static/share.png",
+				"iconPath": "static/share.png",
+				"pagePath": "pages/startpage/index",
+				"text": ""
+			},
+			{
+				"selectedIconPath": "./static/guide.png",
+				"iconPath": "static/guide.png",
+				"pagePath": "pages/homepage/index",
+				"text": ""
+			},
+			{
+				"selectedIconPath": "./static/chat.png",
+				"iconPath": "static/chat.png",
+				"pagePath": "pages/loginpage/index",
+				"text": ""
+			},
+			{
+				"selectedIconPath": "./static/me.png",
+				"iconPath": "static/me.png",
+				"pagePath": "pages/labelpage/index",
+				"text": ""
+			}
+		]
 	}
+
 }
+
+
