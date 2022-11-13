@@ -57,21 +57,23 @@
       <image class = "picture_4" src="https://i.postimg.cc/j5xs3FCX/44.png"/>
     </view>
     <view class="container2">
-      <image class = "picture_5" src="https://i.postimg.cc/Vvk3Xyvx/7.png"/>
-      <image class = "picture_5" src="https://i.postimg.cc/Vvk3Xyvx/7.png"/>
-      <image class = "picture_5" src="https://i.postimg.cc/Vvk3Xyvx/7.png"/>
-      <image class = "picture_5" src="https://i.postimg.cc/Vvk3Xyvx/7.png"/>
-    </view>
-    <view class="container3">
-      <view class = "name_1">再吃亿口</view>
-      <view class = "name_2">奶茶接班人 </view>
-      <view class = "name_3">清蒸奥利奥</view>
-      <view class = "name_4">皮蛋solo粥</view>
-      <view class = "taste_1">口味相似度100%</view>
-      <view class = "taste_2">口味相似度99% </view>
-      <view class = "taste_3">口味相似度98%</view>
-      <view class = "taste_4">口味相似度95%</view>
-    </view>
+      <view class="container2_1">
+        <view class = "name_1">再吃亿口</view>
+        <view class = "taste_1">口味相似度100%</view>
+      </view>
+      <view class="container2_2">
+        <view class = "name_2">奶茶接班人 </view>
+        <view class = "taste_2">口味相似度99% </view>
+      </view>
+      <view class="container2_3">
+        <view class = "name_3">清蒸奥利奥</view>
+        <view class = "taste_3">口味相似度98%</view>
+      </view>
+      <view class="container2_4">
+        <view class = "name_4">皮蛋solo粥</view>
+        <view class = "taste_4">口味相似度95%</view>
+      </view>
+  </view>
   </view>
 
 </template>
@@ -162,9 +164,8 @@ export default {
   position: relative;
   height: 50rpx;
   width: 160rpx;
-  margin-top: 10rpx;
-  margin-left: 400rpx;
-  margin-right: auto;
+  margin-top: 3px;
+  margin-left: 1px ;
   background: #FBCA1F;
   font-family: inherit;
   padding: 0.6em 1.5em;
@@ -175,9 +176,6 @@ export default {
   border-radius: 1.5em;
   box-shadow: 0.1em 0.1em;
   flex-direction: row;
-  position: fixed;
-  top:49px;
-  left:15px;
 }
 
 .b2:hover {
@@ -189,7 +187,11 @@ export default {
   transform: translate(0.05em, 0.05em);
   box-shadow: 0.05em 0.05em;
 }
-
+.button_1_2
+{
+  display: flex;
+  /*border: 1.5px solid #FBCA1F;*/
+}
 /**index.wxss**/
 .box_1{
   border: 1.5px solid #FBCA1F;
@@ -229,7 +231,6 @@ export default {
   /*text-align: center;居中*/
   margin-bottom: 10px;
   color:#7f8a94;
-
 }
 
 .container1 view{
@@ -239,6 +240,30 @@ export default {
   line-height: 100px;
 }
 
+.container2_1{
+  margin-left: 5px;
+  width:60px;
+  height:60px;
+  background: black;
+}
+.container2_2{
+  margin-left: 12px;
+  width:60px;
+  height:60px;
+  background: black;
+}
+.container2_3{
+  margin-left: 11px;
+  width:60px;
+  height:60px;
+  background: black;
+}
+.container2_4{
+  margin-left: 12px;
+  width:60px;
+  height:60px;
+  background: black;
+}
 .picture_1
 {
   width:60px;
@@ -261,16 +286,10 @@ export default {
   height:60px;
 }
 
-.picture_5
-{
-  width:60px;
-  height:32px;
-}
 .name_1
 {
-  position: fixed;
-  top:420px;
-  left:35px;
+  margin-left:10px;
+  margin-top: 15px;
   font-family:SimHei;
   font-size: 10px;
   color:#ffffff;
@@ -278,18 +297,16 @@ export default {
 
 .name_2
 {
-  position: fixed;
-  top:420px;
-  left:100px;
+  margin-left:5px;
+  margin-top: 15px;
   font-family:SimHei;
   font-size: 10px;
   color:#ffffff;
 }
 .name_3
 {
-  position: fixed;
-  top:420px;
-  left:171px;
+  margin-left:5px;
+  margin-top: 15px;
   font-family:SimHei;
   font-size: 10px;
   color:#ffffff;
@@ -297,9 +314,8 @@ export default {
 
 .name_4
 {
-  position: fixed;
-  top:420px;
-  left:243px;
+  margin-left:5px;
+  margin-top: 15px;
   font-family:SimHei;
   font-size: 10px;
   color:#ffffff;
@@ -307,9 +323,8 @@ export default {
 
 .taste_1
 {
-  position: fixed;
-  top:433px;
-  left:30px;
+  margin-left:6px;
+  margin-top: 12px;
   font-family:SimHei;
   font-size: 7px;
   color:#ffffff;
@@ -317,18 +332,16 @@ export default {
 
 .taste_2
 {
-  position: fixed;
-  top:433px;
-  left:103px;
+  margin-left:7px;
+  margin-top: 12px;
   font-family:SimHei;
   font-size: 7px;
   color:#ffffff;
 }
 .taste_3
 {
-  position: fixed;
-  top:433px;
-  left:174px;
+  margin-left:7px;
+  margin-top: 12px;
   font-family:SimHei;
   font-size: 7px;
   color:#ffffff;
@@ -336,9 +349,8 @@ export default {
 
 .taste_4
 {
-  position: fixed;
-  top:433px;
-  left:245px;
+  margin-left:7px;
+  margin-top: 12px;
   font-family:SimHei;
   font-size: 7px;
   color:#ffffff;
@@ -351,13 +363,13 @@ export default {
 
 .container2 {
   display: flex;
-  justify-content: space-around;
+  /*border: 1.5px solid #FBCA1F;*/
 }
 
 .go_1{
   position: absolute;
-  top:91px;
-  left:270px;
+  margin-top:1px;
+  margin-left:255px;
   width:30px;
   height:30px;
   z-index: 9999;
@@ -365,8 +377,8 @@ export default {
 
 .go_2{
   position: absolute;
-  top:310px;
-  left:270px;
+  margin-top:1px;
+  margin-left:255px;
   width:30px;
   height:30px;
   z-index: 9999;
