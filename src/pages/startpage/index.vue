@@ -21,7 +21,7 @@ export default {
   methods: {
     toLogin: () => {               //跳转到登录页面
       uni.navigateTo({
-       url: '../loginpage/index'
+       url: '../labelpage/index'
       })
     }
   },

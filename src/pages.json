@@ -1,5 +1,5 @@
 {
-"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
 			"path": "pages/default/index"
 		},
@@ -14,6 +14,18 @@
 		},
 		{
 			"path": "pages/homepage/index"
+		},
+		{
+			"path": "pages/sharepage/index"
+		},
+		{
+			"path": "pages/friendcirclepage/index"
+		},
+		{
+			"path": "pages/perinfopage/index"
+		},
+		{
+			"path": "pages/personalpage/index"
 		}
 	],
 
@@ -28,8 +40,8 @@
 
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTitleText": "知食分子",
+		"navigationBarBackgroundColor": "#FFD040",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
@@ -39,27 +51,27 @@
 		"borderStyle": "white",
 		"list": [
 			{
-				"selectedIconPath": "./static/share.png",
-				"iconPath": "static/share.png",
-				"pagePath": "pages/startpage/index",
+				"selectedIconPath": "./static/home.png",
+				"iconPath": "static/home.png",
+				"pagePath": "pages/homepage/index",
 				"text": ""
 			},
 			{
 				"selectedIconPath": "./static/guide.png",
 				"iconPath": "static/guide.png",
-				"pagePath": "pages/homepage/index",
+				"pagePath": "pages/friendcirclepage/index",
 				"text": ""
 			},
 			{
-				"selectedIconPath": "./static/chat.png",
-				"iconPath": "static/chat.png",
-				"pagePath": "pages/loginpage/index",
+				"selectedIconPath": "./static/share.png",
+				"iconPath": "static/share.png",
+				"pagePath": "pages/sharepage/index",
 				"text": ""
 			},
 			{
 				"selectedIconPath": "./static/me.png",
 				"iconPath": "static/me.png",
-				"pagePath": "pages/labelpage/index",
+				"pagePath": "pages/personalpage/index",
 				"text": ""
 			}
 		]

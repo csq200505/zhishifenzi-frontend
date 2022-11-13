@@ -73,7 +73,7 @@
     </view>
 
     <view class="jump_next_page">
-        <button class="jump_button" v-on:click="toStart"><text class='button_text'>></text></button>
+        <button class="jump_button" v-on:click="toHome"><text class='button_text'>></text></button>
     </view>
 
 </view> 
@@ -83,9 +83,9 @@
     export default {
         onLoad() {},
         methods: {
-            toStart: () => {  //跳转到登录页面
-                uni.navigateTo({
-                    url: '../startpage/index'
+            toHome: () => {  //跳转到首页
+                uni.switchTab({
+                    url: '../homepage/index'
             })
         }
     },
