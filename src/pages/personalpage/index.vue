@@ -5,7 +5,7 @@
     <view class="whiteBackgound">   
       <!--个人简介部分-->
       <view class="personINFO">
-        <image class="tx" src="/static/tx2.png"></image>
+        <image class="tx" src="/static/tx2.png" v-on:click="toPerinfo"></image>
         <view class="INFO">
           <p class="name">贴一张芝士面膜</p>
           <p class="motto">谁动了我的奶酪</p>
@@ -86,6 +86,11 @@ export default {
     toLogin: () => {               //跳转到登陆页面
       uni.navigateTo({
        url: '../loginpage/index'
+      })
+    },
+    toPerinfo: () => {               //跳转到个人资料
+      uni.navigateTo({
+        url: '../perinfopage/index'
       })
     }
   },

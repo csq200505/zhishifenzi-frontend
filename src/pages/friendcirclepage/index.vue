@@ -60,29 +60,29 @@
  }
  .title1
  {
- font-size: 50rpx;
+ font-size: 40rpx;
  color: #000000;
  top: 5px;
  left: 10px;
- margin-left: 7px;
+ margin-left: 20px;
  
  }
  .title2
  {
- font-size: 50rpx;
+ font-size: 40rpx;
  color: #000000;
  margin-left: 45px;
  
  }
  .title3
  {
- font-size: 50rpx;
+ font-size: 40rpx;
  color: #000000;
  margin-left: 45px;
  }
  .title4
  {
- font-size: 50rpx;
+ font-size: 40rpx;
  color: #000000;
  margin-left: 45px;
  }
@@ -116,7 +116,7 @@
  }
  .comment1
  {
- font-size: 55rpx;
+ font-size: 50rpx;
  color: #000000;
  font-weight: bolder;
  font-family: SimHei;
@@ -125,7 +125,7 @@
  }
  .name1
  {
- font-size: 35rpx;
+ font-size: 30rpx;
  color: #000000;
  font-weight: bolder;
  }
@@ -161,7 +161,7 @@
  }
  .comment2
  {
- font-size: 55rpx;
+ font-size: 50rpx;
  color: #000000;
  font-weight: bolder;
  font-family: SimHei;
@@ -170,7 +170,7 @@
  }
  .name2
  {
- font-size: 35rpx;
+ font-size: 30rpx;
  color: #000000;
  font-weight: bolder;
  }
@@ -205,7 +205,7 @@
  }
  .comment3
  {
- font-size: 55rpx;
+ font-size: 50rpx;
  color: #000000;
  font-weight: bolder;
  font-family: SimHei;
@@ -214,7 +214,7 @@
  }
  .name3
  {
- font-size: 35rpx;
+ font-size: 30rpx;
  color: #000000;
  font-weight: bolder;
  }

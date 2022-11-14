@@ -105,29 +105,29 @@ width: 100%;
 }
 
 .title {
-font-size: 67rpx;
+font-size: 60rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 0.5%;
+top: 5%;
 left: 42%;
 }
 
 .box {
 width: 100%;
-height: 94%;
+height: 88.5%;
 position:fixed;
 background:white;
-margin-top: 13%;
+margin-top: 20%;
 background-repeat: no-repeat;
 border-radius:35px;
 }
 
 .jump_button {
-margin-top: 139%;
+margin-top: 161%;
 width: 15%;
 background-color: #FFD040;
 color: white;
@@ -143,23 +143,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 10%;
+top: 13%;
 left: 6%;
 }
 .text1 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 12%;
+top: 15%;
 left: 23%;
 }
 .choose1 {
 position: fixed;
-top: 11.7%;
+top: 14.7%;
 left: 83%;
 }
 .item2 {
@@ -167,23 +167,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 20%;
+top: 23%;
 left: 6%;
 }
 .text2 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 22%;
+top: 25%;
 left: 23%;
 }
 .choose2 {
 position: fixed;
-top: 21.7%;
+top: 24.7%;
 left: 83%;
 }
 
@@ -192,23 +192,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 30%;
+top: 33%;
 left: 6%;
 }
 .text3 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 32%;
+top: 35%;
 left: 23%;
 }
 .choose3 {
 position: fixed;
-top: 31.7%;
+top: 34.7%;
 left: 83%;
 }
 
@@ -217,23 +217,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 40%;
+top: 43%;
 left: 6%;
 }
 .text4 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 42%;
+top: 45%;
 left: 23%;
 }
 .choose4 {
 position: fixed;
-top: 41.7%;
+top: 44.7%;
 left: 83%;
 }
 
@@ -242,23 +242,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 50%;
+top: 53%;
 left: 6%;
 }
 .text5 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 52%;
+top: 55%;
 left: 23%;
 }
 .choose5 {
 position: fixed;
-top: 51.7%;
+top: 54.7%;
 left: 83%;
 }
 
@@ -267,23 +267,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 60%;
+top: 63%;
 left: 6%;
 }
 .text6 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 62%;
+top: 65%;
 left: 23%;
 }
 .choose6 {
 position: fixed;
-top: 61.7%;
+top: 64.7%;
 left: 83%;
 }
 
@@ -292,23 +292,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 70%;
+top: 73%;
 left: 6%;
 }
 .text7 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 72%;
+top: 75%;
 left: 23%;
 }
 .choose7 {
 position: fixed;
-top: 71.7%;
+top: 74.7%;
 left: 83%;
 }
 
@@ -317,23 +317,23 @@ height: 100rpx;
 width: 100rpx;
 border-radius:200px;
 position: fixed;
-top: 80%;
+top: 83%;
 left: 6%;
 }
 .text8 {
-font-size: 38rpx;
+font-size: 35rpx;
 color: #000000;
 display: flex;
 justify-content:center;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 font-weight: bolder;
 position: fixed;
-top: 82%;
+top: 85%;
 left: 23%;
 }
 .choose8 {
 position: fixed;
-top: 81.7%;
+top: 84.7%;
 left: 83%;
 }
 

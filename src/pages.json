@@ -10,13 +10,19 @@
 			"path": "pages/loginpage/index"
 		},
 		{
-			"path": "pages/labelpage/index"
+			"path": "pages/labelpage/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
 		},
 		{
 			"path": "pages/homepage/index"
 		},
 		{
-			"path": "pages/sharepage/index"
+			"path": "pages/sharepage/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
 		},
 		{
 			"path": "pages/friendcirclepage/index"
@@ -26,6 +32,15 @@
 		},
 		{
 			"path": "pages/personalpage/index"
+		},
+		{
+			"path": "pages/suggestpage/index"
+		},
+		{
+			"path": "pages/fanuupage/index"
+		},
+		{
+			"path": "pages/detailpage/index"
 		}
 	],
 
@@ -41,7 +56,7 @@
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "知食分子",
-		"navigationBarBackgroundColor": "#FFD040",
+		"navigationBarBackgroundColor": "#FBCA1F",
 		"backgroundColor": "#F8F8F8"
 	},
 	"tabBar": {
@@ -78,5 +93,8 @@
 	}
 
 }
+
+
+
 
 

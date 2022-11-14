@@ -35,28 +35,28 @@ export default {
 <style scoped>
 .container_1{
   flex:1;
-  height:60px;
+  height:68px;
   background: #FBCA1F;
 }
 .top_text{
   font-weight:bold;
   font-family: YouYuan;
-  font-size: 23px;
+  font-size: 22px;
   text-align: center;
-  padding-top: 20px;
+  padding-top: 32px;
 }
 .tip{
   position: absolute;
   font-family: SimSun;
   font-size: 10px;
-  margin-top: 10px;
+  margin-top: 13px;
   left:20px;
   color: darkgray;
 }
 .container_2{
   display: flex;
   /*border: 1.5px solid #FBCA1F;*/
-  margin-top: 27px;
+  margin-top: 40px;
   margin-left: 10px;
   height:80px;
   width:500px;
@@ -124,7 +124,7 @@ export default {
 .container_4{
   display: flex;
   /*border: 1.5px solid #FBCA1F;*/
-  margin-top: 140px;
+  margin-top: 165px;
   margin-left: 10px;
   height:40px;
   width:300px;
