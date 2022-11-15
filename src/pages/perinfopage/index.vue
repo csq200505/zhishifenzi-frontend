@@ -71,7 +71,7 @@ name: "index"
   left: 33rpx;
   padding: 10px;
   font-weight: 250;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 svg {
@@ -91,13 +91,13 @@ svg {
   left:33rpx;
   padding: 10px;
   font-weight: 250;
-  font-size: 11px;
+  font-size: 13px;
 }
 .name_content{
   position: absolute;
   top:233rpx;
   left: 150rpx ;
-  font-size :11px;
+  font-size :13px;
 }
 
 /* 性别 */
@@ -107,7 +107,7 @@ svg {
   left: 33rpx;
   padding: 10px;
   font-weight: 250;
-  font-size: 11px;
+  font-size: 13px;
 }
 /* 生日 */
 .bir_word{
@@ -116,7 +116,7 @@ svg {
   left: 33rpx;
   padding: 10px;
   font-weight: 250;
-  font-size: 11px;
+  font-size: 13px;
 }
 
 /* 签名 */
@@ -126,13 +126,13 @@ svg {
   left: 33rpx;
   padding: 10px;
   font-weight: 250;
-  font-size: 11px;
+  font-size: 13px;
 }
 .sen_content{
   position: absolute;
   top:558rpx;
   left: 150rpx ;
-  font-size :11px;
+  font-size :13px;
 }
 
 .male{

@@ -9,11 +9,11 @@
           <image class = "picture_1" src="https://i.postimg.cc/fR6Qvpx1/z.png" />
           <view class = "h1">
             <view class = "name_1">Bigbear韩国炸鸡</view>
-            <image class = "loc_1" src="/static/_定位小.png" />
+            <image class = "loc_1" src="/static/location.png" />
           </view>
           <view class = "footnote_1">超级好吃的炸鸡</view>
           <view class = "love1">
-            <image class = "like_1" src="/static/爱心.png" />
+            <image class = "like_1" src="/static/like.png" />
             <view class = "num_1">3243</view>
           </view>
         </view>
@@ -21,11 +21,11 @@
           <image class = "picture_2" src="https://i.postimg.cc/JzhdBqvv/h.png" />
           <view class = "h2">
             <view class = "name_2">汉霸王 </view>
-            <image class = "loc_1" src="/static/_定位小.png" />
+            <image class = "loc_1" src="/static/location.png" />
           </view>
           <view class = "footnote_2">汉堡薯条优质商家</view>
           <view class = "love2">
-            <image class = "like_2" src="/static/爱心.png" />
+            <image class = "like_2" src="/static/like.png" />
             <view class = "num_2">1343</view>
           </view>
         </view>
@@ -33,11 +33,11 @@
           <image class = "picture_3" src="https://i.postimg.cc/Qxprbh85/000.png" />
           <view class = "h3">
             <view class = "name_3"> 杨国福 </view>
-            <image class = "loc_1" src="/static/_定位小.png" />
+            <image class = "loc_1" src="/static/location.png" />
           </view>
           <view class = "footnote_3">精选品牌</view>
           <view class = "love3">
-            <image class = "like_3" src="/static/爱心.png" />
+            <image class = "like_3" src="/static/like.png" />
             <view class = "num_3">1343</view>
           </view>
         </view>
@@ -48,11 +48,11 @@
           <image class = "picture_4" src="https://i.postimg.cc/Qxprbh85/000.png" />
           <view class = "h4">
             <view class = "name_4"> 杨国福 </view>
-            <image class = "loc_1" src="/static/_定位小.png" />
+            <image class = "loc_1" src="/static/location.png" />
           </view>
           <view class = "footnote_4">精选品牌</view>
           <view class = "love4">
-            <image class = "like_4" src="/static/爱心.png" />
+            <image class = "like_4" src="/static/like.png" />
             <view class = "num_4">1343</view>
           </view>
         </view>
@@ -60,11 +60,11 @@
           <image class = "picture_5" src="https://i.postimg.cc/fR6Qvpx1/z.png" />
           <view class = "h5">
             <view class = "name_5">Bigbear韩国炸鸡</view>
-            <image class = "loc_1" src="/static/_定位小.png" />
+            <image class = "loc_1" src="/static/location.png" />
           </view>
           <view class = "footnote_5">超级好吃的炸鸡</view>
           <view class = "love5">
-            <image class = "like_5" src="/static/爱心.png" />
+            <image class = "like_5" src="/static/like.png" />
             <view class = "num_5">1343</view>
           </view>
         </view>
@@ -72,11 +72,11 @@
           <image class = "picture_6" src="https://i.postimg.cc/JzhdBqvv/h.png" />
           <view class = "h6">
             <view class = "name_6">汉霸王 </view>
-            <image class = "loc_1" src="/static/_定位小.png" />
+            <image class = "loc_1" src="/static/location.png" />
           </view>
           <view class = "footnote_6">汉堡薯条优质商家</view>
           <view class = "love6">
-            <image class = "like_6" src="/static/爱心.png" />
+            <image class = "like_6" src="/static/like.png" />
             <view class = "num_6">1343</view>
           </view>
         </view>
@@ -103,16 +103,17 @@ export default {
 }
 .title{
   flex:1;
-  height:33px;
+  height:40px;
   /*border: 1.5px solid #DCDCDC;*/
   background: white;
 }
 .top_text{
-  font-weight:bold;
+  font-weight:normal;
   font-family: STZhongsong;
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   padding-top: 6px;
+  letter-spacing: 2.5px;
 }
 .line_1{
   margin-left: 1.33%;

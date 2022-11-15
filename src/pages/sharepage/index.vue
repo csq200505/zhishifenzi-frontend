@@ -35,15 +35,16 @@ export default {
 <style scoped>
 .container_1{
   flex:1;
-  height:68px;
+  height:35px;
   background: #FBCA1F;
 }
 .top_text{
-  font-weight:bold;
+  font-weight:normal;
   font-family: YouYuan;
   font-size: 22px;
   text-align: center;
-  padding-top: 32px;
+  padding-top: 0%;
+  letter-spacing: 2.5px;
 }
 .tip{
   position: absolute;

@@ -22,7 +22,7 @@
 
   <!--index.wxml-->
   <view class="box_1">
-    <image class = "go_1" src="/static/进入.png" v-on:click="toSuggest"/>
+    <image class = "go_1" src="/static/enter.png" v-on:click="toSuggest"/>
     <view class = "text_recommend">个性推荐</view>
     <view class = "text_help">帮助小主翻牌，看看要宠幸哪位佳肴</view>
     <swiper indicator-dots="true" indicator-color="gray" indicator-active-color="red" autoplay="true">
@@ -47,7 +47,7 @@
   </view>
 
   <view class="box_2">
-    <image class = "go_2" src="/static/进入.png" v-on:click="toFanuu"/>
+    <image class = "go_2" src="/static/enter.png" v-on:click="toFanuu"/>
     <view class = "text_finduu">发现饭UU</view>
     <view class = "text_look">寻找精神灵食粮好友，偷偷看他们在吃什么！</view>
     <view class="container1">

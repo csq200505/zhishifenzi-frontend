@@ -88,8 +88,8 @@
  }
  
  .list1{
-   margin-top: 10px;
-   margin-left:4px;
+   margin-top: 3%;
+   margin-left:3%;
  }
  .friend1
  {
@@ -106,8 +106,8 @@
  }
  .share1
  {
- height: 280rpx;
- width: 730rpx;
+ height: 500rpx;
+ width: 700rpx;
  border-radius:10px;
  }
  .text1{
@@ -131,8 +131,8 @@
  }
  
  .list2{
-   margin-left:4px;
-   margin-top: 15px;
+   margin-left:3%;
+   margin-top: 5%;
  
  }
  .friend2
@@ -150,8 +150,8 @@
  }
  .share2
  {
- height: 280rpx;
- width: 730rpx;
+   height: 500rpx;
+   width: 700rpx;
  border-radius:10px;
  
  }
@@ -176,8 +176,8 @@
  }
  
  .list3{
-   margin-top: 15px;
-   margin-left:4px;
+   margin-top: 5%;
+   margin-left:3%;
  }
  .friend3
  {
@@ -193,8 +193,8 @@
  }
  .share3
  {
- height: 280rpx;
- width: 730rpx;
+   height: 500rpx;
+   width: 700rpx;
  border-radius:10px;
  
  }

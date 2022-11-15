@@ -4,7 +4,10 @@
 			"path": "pages/default/index"
 		},
 		{
-			"path": "pages/startpage/index"
+			"path": "pages/startpage/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
 		},
 		{
 			"path": "pages/loginpage/index"
@@ -21,7 +24,7 @@
 		{
 			"path": "pages/sharepage/index",
 			"style": {
-				"navigationStyle": "custom"
+				"navigationBarTitleText": ""
 			}
 		},
 		{
@@ -31,10 +34,16 @@
 			"path": "pages/perinfopage/index"
 		},
 		{
-			"path": "pages/personalpage/index"
+			"path": "pages/personalpage/index",
+			"style": {
+				"navigationStyle": "custom"
+			}
 		},
 		{
-			"path": "pages/suggestpage/index"
+			"path": "pages/suggestpage/index",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		},
 		{
 			"path": "pages/fanuupage/index"
@@ -59,6 +68,7 @@
 		"navigationBarBackgroundColor": "#FBCA1F",
 		"backgroundColor": "#F8F8F8"
 	},
+
 	"tabBar": {
 		"color": "#999",
 		"selectedColor": "#3D98FF",

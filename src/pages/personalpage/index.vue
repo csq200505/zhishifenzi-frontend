@@ -5,7 +5,7 @@
     <view class="whiteBackgound">   
       <!--个人简介部分-->
       <view class="personINFO">
-        <image class="tx" src="/static/tx2.png" v-on:click="toPerinfo"></image>
+        <image class="tx" src="/static/tx.png" v-on:click="toPerinfo"></image>
         <view class="INFO">
           <p class="name">贴一张芝士面膜</p>
           <p class="motto">谁动了我的奶酪</p>
@@ -28,12 +28,12 @@
   
   <view class="icon">
     <image class="icon1" src="/static/friend.png"></image>
-    <image class="icon2" src="/static/help.png"></image>
-    <image class="icon3" src="/static/set.png"></image>
+<!--    <image class="icon2" src="/static/help.png"></image>-->
+<!--    <image class="icon3" src="/static/set.png"></image>-->
     <view class="tag">
       <p class="tag4">好友</p>
-      <p class="tag5">帮助</p>
-      <p class="tag6">设置</p>
+<!--      <p class="tag5">帮助</p>-->
+<!--      <p class="tag6">设置</p>-->
     </view>
   </view>
   
@@ -112,10 +112,10 @@ width: 100%;
 
 .whiteBackgound {
 width: 100%;
-height: 25%;
+height: 20%;
 position:fixed;
 background:white;
-margin-top: 0%;
+margin-top: 25%;
 background-repeat: no-repeat;
 border-radius:35px;
 }
@@ -129,14 +129,14 @@ border-radius:35px;
   font-weight: bolder;
   font-family: 'Times New Roman', Times, serif;
   position: fixed;
-  top: 4%;
+  top: 15%;
   left: 8%;
 }
 .motto {
   font-family: 'Times New Roman', Times, serif;
   color: grey;
   position: fixed;
-  top: 10%;
+  top: 20%;
   left: 8%;
 }
 .tag {
@@ -146,18 +146,18 @@ border-radius:35px;
 }
 .tag1 {
   position: fixed;
-  top: 21%;
-  left: 14%;
+  top: 28.5%;
+  left: 10%;
 }
 .tag2 {
   position: fixed;
-  top: 21%;
-  left: 28%;
+  top: 28.5%;
+  left: 25%;
 }
 .tag3 {
   position: fixed;
-  top: 21%;
-  left: 45%;
+  top: 28.5%;
+  left: 41%;
 }
 
 .num {
@@ -166,18 +166,18 @@ border-radius:35px;
 }
 .num1 {
   position: fixed;
-  top: 17%;
-  left: 14%;
+  top: 25%;
+  left: 11%;
 }
 .num2 {
   position: fixed;
-  top: 17%;
-  left: 28%;
+  top: 25%;
+  left: 25%;
 }
 .num3 {
   position: fixed;
-  top: 17%;
-  left: 45%;
+  top: 25%;
+  left: 42%;
 }
 
 .tx {
@@ -185,48 +185,48 @@ border-radius:35px;
   width: 200rpx;
   border-radius:30px;
   position: fixed;
-  top: 3%;
+  top: 15%;
   left: 65%;
 }
 
 .icon {
   position: fixed;
-  top: 27%;
+  top: 23.5%;
 }
 .icon1 {
   height: 60rpx;
   width: 60rpx;
   position: fixed;
-  left: 10%;
+  left: 55%;
 }
-.icon2 {
-  height: 60rpx;
-  width: 60rpx;
-  position: fixed;
-  left: 22%;
-}
-.icon3 {
-  height: 60rpx;
-  width: 60rpx;
-  position: fixed;
-  left: 34%;
-}
+/*.icon2 {*/
+/*  height: 60rpx;*/
+/*  width: 60rpx;*/
+/*  position: fixed;*/
+/*  left: 22%;*/
+/*}*/
+/*.icon3 {*/
+/*  height: 60rpx;*/
+/*  width: 60rpx;*/
+/*  position: fixed;*/
+/*  left: 34%;*/
+/*}*/
 
 .tag4 {
   position: fixed;
-  top: 33%;
-  left: 10%;
+  top: 28.5%;
+  left: 56%;
 }
-.tag5 {
-  position: fixed;
-  top: 33%;
-  left: 23%;
-}
-.tag6 {
-  position: fixed;
-  top: 33%;
-  left: 35%;
-}
+/*.tag5 {*/
+/*  position: fixed;*/
+/*  top: 33%;*/
+/*  left: 23%;*/
+/*}*/
+/*.tag6 {*/
+/*  position: fixed;*/
+/*  top: 33%;*/
+/*  left: 35%;*/
+/*}*/
 
 .block1 {
   position: fixed;
