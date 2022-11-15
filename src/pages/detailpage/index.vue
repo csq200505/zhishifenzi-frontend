@@ -32,7 +32,6 @@
   <view class="comment">
     <h1 class="comment_title">打分</h1>
 
-
     <div>
       <div class="comment-container">
         <!-- 标签评分 -->

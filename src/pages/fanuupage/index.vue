@@ -1,7 +1,7 @@
 <template>
   <view class="box">
     <view class="person">
-      <image class="tx" src="/static/tx.png"></image>
+      <image class="tx" src="/static/tx-1.png"></image>
       <view class="text">
         <p class="p1">再吃亿口</p>
         <p class="p2">与你口味相似度100%</p>

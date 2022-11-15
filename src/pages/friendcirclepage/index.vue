@@ -65,14 +65,12 @@
  top: 5px;
  left: 10px;
  margin-left: 20px;
- 
  }
  .title2
  {
  font-size: 40rpx;
  color: #000000;
  margin-left: 45px;
- 
  }
  .title3
  {

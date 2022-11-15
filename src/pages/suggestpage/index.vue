@@ -6,7 +6,7 @@
     <view class = "food">
       <view class = "line_1">
         <view class = "food_1">
-          <image class = "picture_1" src="https://i.postimg.cc/fR6Qvpx1/z.png" />
+          <image class = "picture_1" src="https://i.postimg.cc/fR6Qvpx1/z.png" v-on:click="toDetail"/>
           <view class = "h1">
             <view class = "name_1">Bigbear韩国炸鸡</view>
             <image class = "loc_1" src="/static/location.png" />
@@ -18,7 +18,7 @@
           </view>
         </view>
         <view class = food_2>
-          <image class = "picture_2" src="https://i.postimg.cc/JzhdBqvv/h.png" />
+          <image class = "picture_2" src="https://i.postimg.cc/JzhdBqvv/h.png" v-on:click="toDetail"/>
           <view class = "h2">
             <view class = "name_2">汉霸王 </view>
             <image class = "loc_1" src="/static/location.png" />
@@ -30,7 +30,7 @@
           </view>
         </view>
         <view class = food_3>
-          <image class = "picture_3" src="https://i.postimg.cc/Qxprbh85/000.png" />
+          <image class = "picture_3" src="https://i.postimg.cc/Qxprbh85/000.png" v-on:click="toDetail"/>
           <view class = "h3">
             <view class = "name_3"> 杨国福 </view>
             <image class = "loc_1" src="/static/location.png" />
@@ -45,7 +45,7 @@
 
       <view class = "line_2">
         <view class = food_4>
-          <image class = "picture_4" src="https://i.postimg.cc/Qxprbh85/000.png" />
+          <image class = "picture_4" src="https://i.postimg.cc/Qxprbh85/000.png" v-on:click="toDetail"/>
           <view class = "h4">
             <view class = "name_4"> 杨国福 </view>
             <image class = "loc_1" src="/static/location.png" />
@@ -57,7 +57,7 @@
           </view>
         </view>
         <view class = "food_5">
-          <image class = "picture_5" src="https://i.postimg.cc/fR6Qvpx1/z.png" />
+          <image class = "picture_5" src="https://i.postimg.cc/fR6Qvpx1/z.png" v-on:click="toDetail"/>
           <view class = "h5">
             <view class = "name_5">Bigbear韩国炸鸡</view>
             <image class = "loc_1" src="/static/location.png" />
@@ -69,7 +69,7 @@
           </view>
         </view>
         <view class = food_6>
-          <image class = "picture_6" src="https://i.postimg.cc/JzhdBqvv/h.png" />
+          <image class = "picture_6" src="https://i.postimg.cc/JzhdBqvv/h.png" v-on:click="toDetail"/>
           <view class = "h6">
             <view class = "name_6">汉霸王 </view>
             <image class = "loc_1" src="/static/location.png" />
@@ -89,7 +89,14 @@
 
 <script>
 export default {
-  name: "index"
+  onLoad() {},
+  methods: {
+    toDetail: () => {               //跳转到登录页面
+      uni.navigateTo({
+        url: '../detailpage/index'
+      })
+    }
+  },
 }
 </script>
 

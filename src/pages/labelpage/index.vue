@@ -78,7 +78,8 @@
 
 </view> 
 </template>
-    
+
+
 <script>
     let array = []
     export default {

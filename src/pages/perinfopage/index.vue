@@ -64,7 +64,6 @@ name: "index"
 }
 
 
-
 .word {
   position:absolute;
   top: 79rpx;

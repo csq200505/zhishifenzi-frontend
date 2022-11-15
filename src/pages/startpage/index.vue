@@ -38,8 +38,7 @@ export default {
   background-size: 100% 100%;             
   position: fixed; 
   height: 100%; 
-  width: 100%; 
-
+  width: 100%;
 }
 
 .brand {
@@ -90,5 +89,3 @@ export default {
   left: 60px;
 }
 </style>
-
-

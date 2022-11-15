@@ -27,19 +27,19 @@
     <view class = "text_help">帮助小主翻牌，看看要宠幸哪位佳肴</view>
     <swiper class = "mov" indicator-dots="true" indicator-color="gray" indicator-active-color="red" autoplay="true">
       <swiper-item>
-        <image class="s1" src="https://i.postimg.cc/pXZm2KMy/image.png" />
+        <image class="s1" src="https://i.postimg.cc/pXZm2KMy/image.png" v-on:click="toDetail"/>
       </swiper-item>
       <swiper-item>
-        <image class="s2" src="https://i.postimg.cc/7ZjwDLhf/4.png"/>
+        <image class="s2" src="https://i.postimg.cc/7ZjwDLhf/4.png" v-on:click="toDetail"/>
       </swiper-item>
       <swiper-item>
-        <image class="s3" src="https://i.postimg.cc/PrBR5vbs/1.png"/>
+        <image class="s3" src="https://i.postimg.cc/PrBR5vbs/1.png" v-on:click="toDetail"/>
       </swiper-item>
       <swiper-item>
-        <image class="s4" src="https://i.postimg.cc/L8tN4C6L/3.png"/>
+        <image class="s4" src="https://i.postimg.cc/L8tN4C6L/3.png" v-on:click="toDetail"/>
       </swiper-item>
       <swiper-item>
-        <image class="s5" src="https://i.postimg.cc/fRN1v0V7/5.png"/>
+        <image class="s5" src="https://i.postimg.cc/fRN1v0V7/5.png" v-on:click="toDetail"/>
       </swiper-item>
     </swiper>
   </view>
@@ -94,6 +94,11 @@ export default {
     toFanuu: () => {
       uni.navigateTo({
         url: '../fanuupage/index'
+      })
+    },
+    toDetail: () => {
+      uni.navigateTo({
+        url: '../detailpage/index'
       })
     }
   },
