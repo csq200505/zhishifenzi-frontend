@@ -49,7 +49,6 @@ export default {
   display: flex;
   justify-content: center;
 }
-
 .title {
   font-size: 36rpx;
   color: #8f8f94;

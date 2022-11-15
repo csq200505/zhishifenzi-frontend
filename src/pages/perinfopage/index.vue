@@ -118,7 +118,6 @@ svg {
   font-weight: 250;
   font-size: 13px;
 }
-
 /* 签名 */
 .sen_word{
   position:absolute;

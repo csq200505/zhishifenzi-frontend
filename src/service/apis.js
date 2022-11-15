@@ -2,6 +2,7 @@ import {
     postMethod
 } from "./api";
 
+
 export const sendTag = (id,tag) => {
     return postMethod("",{
         id,

@@ -35,7 +35,6 @@ export function postMethod(url,data){
     })
 }
 
-
 /**
  * 请求后端接口：get方法
  * @param url 后端地址

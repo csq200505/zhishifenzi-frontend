@@ -106,7 +106,7 @@
  }
  .share1
  {
- height: 500rpx;
+ height: 400rpx;
  width: 700rpx;
  border-radius:10px;
  }
@@ -150,7 +150,7 @@
  }
  .share2
  {
-   height: 500rpx;
+   height: 400rpx;
    width: 700rpx;
  border-radius:10px;
  
@@ -193,7 +193,7 @@
  }
  .share3
  {
-   height: 500rpx;
+   height: 400rpx;
    width: 700rpx;
  border-radius:10px;
  

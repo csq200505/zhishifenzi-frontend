@@ -18,6 +18,7 @@
     <span class="privacyAgree">《隐私权政策》</span>
   </div>
 </template>
+
 <script>
 export default {
   onLoad() {},

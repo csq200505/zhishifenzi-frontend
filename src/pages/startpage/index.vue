@@ -3,7 +3,6 @@
 
     <view class="img">       
       <image class="brand" src="/static/logosquare.jpg"></image>
-<!--      <image class="arrow" src="/static/arrow.jpg" v-on:click="toLogin"></image>-->
     </view>
 
     <view class="text">
@@ -60,14 +59,6 @@ export default {
   animation: roll 1.8s ;/*调用动画*/
 }
 
-/*.arrow {*/
-/*  height: 100rpx;*/
-/*  width: 100rpx;*/
-/*  border-radius:200px;*/
-/*  position: fixed;*/
-/*  top: 75%;*/
-/*  left: 43%;*/
-/*}*/
 .jump_button {
   width: 15%;
   background-color: #FFFFFF;
