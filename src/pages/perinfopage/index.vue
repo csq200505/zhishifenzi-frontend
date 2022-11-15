@@ -152,7 +152,7 @@ svg {
   margin-left:16%;
 }
 .staff{
-  position: fixed;
+  position:fixed;
   margin-top: 60%;
   margin-left:38.5%;
 }

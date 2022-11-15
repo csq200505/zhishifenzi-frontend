@@ -12,8 +12,8 @@
   <image class="brand" src="/static/logoSquare.jpg"></image>
   
   <div class="Agreement">
-    <label class="pick"><checkbox color="#F79709" style="transform: scale(0.6);" checked></checkbox></label>
-    <span class="pickSen">选中代表您已同意</span>
+    <label class="Pick"><checkbox color="#F79709" style="transform: scale(0.6);" checked></checkbox></label>
+    <span class="pickSent">选中代表您已同意</span>
     <span class="userAgree">《用户服务协议》</span>
     <span class="privacyAgree">《隐私权政策》</span>
   </div>
@@ -30,7 +30,7 @@ name: "index"
     margin-top: 5%;
     text-align: center;
     font-size: 60rpx;
-    font-family:FZYaoti;
+    font-family:FZYaoti , Arial, sans-serif;
     font-weight: 890;
   }
 
@@ -89,13 +89,13 @@ button:active {
 
 /*agreePick*/
 
-.pick{
+.Pick{
   position: absolute;
   margin-top: 18.8%;
   margin-left: 5%;
   font-size: 11px;
 }
-.pickSen{
+.pickSent{
   position: fixed;
   margin-top: 20%;
   margin-left: 13%;
