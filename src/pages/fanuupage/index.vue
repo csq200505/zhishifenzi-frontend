@@ -1,65 +1,126 @@
 <template>
-  <view class="box">
-    <view class="person">
-      <image class="tx" src="/static/tx-1.png"></image>
-      <view class="text">
-        <p class="p1">再吃亿口</p>
-        <p class="p2">与你口味相似度100%</p>
-      </view>
-      <image class="arrow" src="/static/arrow2.png"></image>
-    </view>
-
+  <view class="title">
+    <view class = "top_text">发现饭uu</view>
+  </view>
+  <view class = "container">
+    <uuitem class = "sub-uuitem" v-for="(data,index) in array"
+          :img=data.img
+          :id = data.id
+          :similarity = data.similarity
+    ></uuitem>
   </view>
 </template>
 
 <script>
+import uuitem from '../fanuupage/components/uuitem'
+import {getFanuu} from "../../service/apis";
+let array =  [
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  },
+  {
+    img:"/static/tx-1.png",
+    id:"再吃亿口",
+    similarity:90
+  }
+
+]
+
 export default {
-  name: "index"
+  data() {
+    return {
+      array
+    }
+  },
+  components:{
+    uuitem
+  },
+  onLoad() {
+    this.getData()
+  },
+  methods:{
+    getData:() => {
+      getFanuu('').then((res) => {
+        if(res.code==1){
+          this.array = res.data
+        }else{}
+      })
+    },
+
+  }
+
 }
 </script>
 
 <style scoped>
-.box {
-  width: 100%;
-  height: 12%;
-  position: relative;
-  background:rgb(255, 237, 117);
-  margin-top: 3%;
-  padding-bottom: 2%;
-  border-radius:35px;
+.title{
+  flex:1;
+  height:40px;
+  /*border: 1.5px solid #DCDCDC;*/
+  background: white;
 }
-.person{
-  display: flex;
-  width: 100%;
+.top_text{
+  font-weight:normal;
+  font-family: STZhongsong;
+  font-size: 22px;
+  text-align: center;
+  padding-top: 6px;
+  letter-spacing: 2.5px;
 }
-.tx {
-  height: 120rpx;
-  width: 120rpx;
-  border-radius:200px;
-  position: relative;
-  margin-top: 3%;
-  margin-left: 5%;
+.container{
+  /*background-color: #FBCA1F;*/
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  width:100%;
+  padding-bottom:10px;
+  padding-left: 3%;
 }
-.text{
-  width: 33%;
-  margin-left: 3%;
-  margin-top: 6%;
-}
-.p1 {
-  display: flex;
-  font-size: small;
-  font-weight: bolder;
-}
-.p2 {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 10px;
-  color: grey;
-  margin-top: 2%;
-}
-.arrow {
-  height: 80rpx;
-  width: 80rpx;
-  margin-left: 26%;
-  margin-top: 6%;
+
+.sub-uuitem{
+  width:94%;
 }
 </style>

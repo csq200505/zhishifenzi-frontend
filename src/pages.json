@@ -46,7 +46,10 @@
 			}
 		},
 		{
-			"path": "pages/fanuupage/index"
+			"path": "pages/fanuupage/index",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		},
 		{
 			"path": "pages/detailpage/index"

@@ -81,6 +81,8 @@
 
 
 <script>
+    import {sendTag} from "../../service/apis";
+
     let array = []
     export default {
         onLoad() {},
