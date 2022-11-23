@@ -1,4 +1,4 @@
-const api = ''
+const api = 'http://1.15.75.204:5000'
 
 /**
  * 前后端交互通用逻辑方法
@@ -26,9 +26,10 @@ export function postMethod(url,data){
             data,
             method:'POST',
             success:(res) => {
-                resolve(res)
+                resolve(res.data)
             },
             fail:(res) => {
+                console.error(res)
                 resolve(res)
             }
         })
@@ -58,6 +59,7 @@ export function getMethod(url,data){
                 resolve(res)
             },
             fail:(res) => {
+                console.error(res)
                 resolve(res)
             }
         })

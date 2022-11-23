@@ -1,7 +1,7 @@
 <template>
   <view class="list">
     <view class="friend">
-      <image class="profile" src="/static/item8.jpg"></image>
+      <image class="profile" src="/static/tx-2.jpg"></image>
       <h2 class="name">再吃亿口</h2>
     </view>
   </view>
@@ -9,15 +9,15 @@
   <view class="share">
     <swiper class="swiper">
       <swiper-item>
-        <image  src="/static/item7.jpg"></image>
+        <image class="ph1" :src=array.img ></image>
         <view class="num">1</view>
       </swiper-item>
       <swiper-item>
-        <image  src="/static/item3.jpg"></image>
+        <image class="ph2" src="/static/item3.jpg"></image>
         <view class="num">2</view>
       </swiper-item>
       <swiper-item>
-        <image src="/static/item6.jpg"></image>
+        <image class="ph3" src="/static/item6.jpg"></image>
         <view class="num">3</view>
       </swiper-item>
     </swiper>
@@ -26,55 +26,114 @@
   <view class="text">
     <h1 class="content">好吃好吃好吃好吃好吃好吃好吃好吃好吃
       喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢
+      大家都来吃啊！！！大家都来吃啊！！！
     </h1>
   </view>
 
-  <view class="comment">
-    <h1 class="comment_title">打分</h1>
 
-    <div>
-      <div class="comment-container">
-        <!-- 标签评分 -->
-        <div style="display: flex;margin-bottom: 10px">
-          <div class="comment-container-item-label-box" v-for="n in 5" :key="index" @click="selected(n)">
-            <img class="comment-container-item1" v-show="cur<n"
-                 src="/static/star_empty.png"/>
-            <img class="comment-container-item1" v-show="cur>=n"
-                 src="/static/star_full.png"/>
-          </div>
-        </div>
-      </div>
-    </div>
-  </view>
 
   <view class="location">
     <image class="position" src="/static/position.png"></image>
-    <h1 class="res_name">玫瑰园一楼</h1>
+    <h1 class="res_name">{{ array.location+array.name }}</h1>
   </view>
 
+  <view class = "love">
+
+    <image class = "like" :src=likeSrc.src v-on:click="doLikeClick" />
+    <view class = "like_num">{{ array.like_nums }}</view>
+    <image class = "collect" :src=collectSrc.src v-on:click="doCollectClick"/>
+  </view>
 </template>
 
-<script>
-export default {
-  name: "integralComment",
-  data() {
-    return {
-      cur: -1,//评分星星下标
-    }
-  },
-  methods: {
-    //评分点击事件
-    selected(n){
-      this.cur = n - 1
-      console.log(this.cur)
-    }
 
+<script>
+import {doCollect, doLike,getDish} from "../../service/apis";
+import {ref} from "vue";
+let id
+let food_id = null
+let collectSrc= ref({
+    src:"/static/star_empty.png"
+})
+let likeSrc= ref({
+  src:"/static/like_empty.png"
+})
+let array= ref({
+    img:"/static/item1.jpeg",
+    location:"玫瑰一楼",
+     name:"烧腊简餐",
+     like_nums:0,
+})
+
+export default{
+  data() {
+    return{
+      collectSrc,
+      likeSrc,
+      array
+    };
+  },
+  onLoad(e){
+    food_id=e.foodid;
+    collectSrc.value.src = "/static/star_empty.png"
+    likeSrc.value.src = "/static/like_empty.png"
+    uni.getStorage({
+      key:'id',
+      success:(res) => {
+        id = res.data
+        console.log(id)
+        if(res.data == undefined){
+          uni.navigateTo({
+            url: '../loginpage/index'
+          })
+        }
+        this.getData()
+      }
+    })
+  },
+  mounted() {
+
+  },
+  methods:{
+    getData: () => {
+      console.log(food_id+'***')
+      getDish(food_id).then((res)=>{
+        console.log(res)
+        if(res.code==0){
+          console.log(res.data[0])
+          array.value = res.data[0]
+        }else{}
+      })
+    },
+    doCollectClick: () => {
+      doCollect(id,food_id).then((res)=>{
+        console.log(res)
+        if(res.code==1){
+          collectSrc.value={src:'/static/star_full.png'}
+        }else if(res.code==2){
+          collectSrc.value={src:'/static/star_empty.png'}
+        }else{}
+       })
+    },
+    doLikeClick: () => {
+      doLike(id,food_id).then((res)=>{
+        console.log(res)
+        if(res.code==1){
+          likeSrc.value={src:'/static/like.png'}
+          array.value = {
+              ...array.value,
+              like_nums:res.data[0].like_nums
+          }
+        }else if(res.code==2){
+          likeSrc.value={src:'/static/like_empty.png'}
+        }else{}
+      })
+    },
   }
 }
 </script>
 
-<style scoped>
 
+<style scoped>
 .friend
 {
   display:flex;
@@ -82,8 +141,8 @@ export default {
 }
 .profile
 {
-  height: 100rpx;
-  width: 100rpx;
+  height: 110rpx;
+  width: 110rpx;
   border-radius:200px;
   border: 1px solid rgb(91, 59, 0);
   margin-top: 2%;
@@ -91,7 +150,7 @@ export default {
 }
 .name
 {
-  font-size: 35rpx;
+  font-size: 40rpx;
   color: #000000;
   font-weight: bolder;
   margin-top: 6.5%;
@@ -99,72 +158,84 @@ export default {
 }
 .swiper
 {
-  height:300px;
-  margin-top:1.5%;
+  height:292px;
+  width:100%;
+  margin-top:3%;
+}
+.ph1
+{
+  width:100%;
+  height:100%;
+}
+.ph2
+{
+  width:100%;
+  height:100%;
+}
+.ph3
+{
+  width:100%;
+  height:100%;
 }
 .num
 {
   margin-left:95%;
-  margin-top:-8%;
-  font-size: 39rpx;
+  margin-top:-10%;
+  font-size: 25px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   color:rgba(255, 255, 0, 0.795);
 }
 .text
 {
-  font-size:50rpx;
-  margin-top:-13%;
+  font-size:45rpx;
+  padding: 20px;
 }
-.comment
+
+.love{
+  margin-left:58%;
+  top:90%;
+  width: 40%;
+  display: flex;
+  position: absolute;
+}
+.collect
 {
-  display:flex;
+  width: 85rpx;
+  height: 85rpx;
+  margin-left:68%;
   margin-top:-2%;
+  position: absolute;
 }
-.comment_title
-{
-  font-size:50rpx;
-  margin-top:6.5%;
-  font-family: SimHei;
-
+.like{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  margin-left:0%;
 }
-.comment-container
-{
-  padding: 15px;
-  margin-left:-5%;
-}
-.comment-container-item-label-box
-{
-  padding: 6px 0px;
-  display:flex;
-  align-items: center;
-  justify-content:end;
+.like_num{
+  font-size: 22px;
+  margin-top:3%;
+  color: rgb(55, 51, 51);
+  margin-left:29%;
 }
 
-.comment-container-item1
-{
-  width: 25px;
-  height: 25px;
-  margin-right: 5px;
-}
-.imgurl-item
-{
-  width: 70px;
-  height: 70px;
-  margin-right: 5px;
-}
 .location
 {
   display:flex;
-  margin-top:-5%;
+  top:83%;
+  width: 100%;
+  margin-left:3%;
+  position: absolute;
+
 }
 .position
 {
-  height: 65rpx;
-  width: 65rpx;
+  height: 50rpx;
+  width: 50rpx;
 }
 .res_name
 {
-  font-size:50rpx;
+  font-size:40rpx;
   margin-top:0.5%;
   margin-left:1%;
   font-family: SimHei;

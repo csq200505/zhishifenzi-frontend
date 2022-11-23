@@ -14,59 +14,62 @@
 <script>
 import uuitem from '../fanuupage/components/uuitem'
 import {getFanuu} from "../../service/apis";
-let array =  [
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  },
-  {
-    img:"/static/tx-1.png",
-    id:"再吃亿口",
-    similarity:90
-  }
-
-]
+import {ref} from "vue";
+let id
+let array =  ref([])
+// [
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   },
+//   {
+//     img:"/static/tx-1.png",
+//     id:"再吃亿口",
+//     similarity:90
+//   }
+//
+// ]
 
 export default {
   data() {
@@ -78,13 +81,26 @@ export default {
     uuitem
   },
   onLoad() {
-    this.getData()
+    uni.getStorage({
+      key:'id',
+      success:(res) => {
+        id = res.data
+        if(res.data == undefined){
+          uni.navigateTo({
+            url: '../loginpage/index'
+          })
+        }
+        this.getData()
+      }
+    })
+
   },
   methods:{
     getData:() => {
-      getFanuu('').then((res) => {
+      console.log("*")
+      getFanuu(id).then((res) => {
         if(res.code==1){
-          this.array = res.data
+          array.value = res.data
         }else{}
       })
     },

@@ -27,19 +27,19 @@
     <view class = "text_help">帮助小主翻牌，看看要宠幸哪位佳肴</view>
     <swiper class = "mov" indicator-dots="true" indicator-color="gray" indicator-active-color="red" autoplay="true">
       <swiper-item>
-        <image class="s1" src="https://i.postimg.cc/pXZm2KMy/image.png" v-on:click="toDetail"/>
+        <image class="s1" :src=pageContent.data.array1[0].img v-on:click="toDetail(pageContent.data.array1[0].id)"/>
       </swiper-item>
       <swiper-item>
-        <image class="s2" src="https://i.postimg.cc/7ZjwDLhf/4.png" v-on:click="toDetail"/>
+        <image class="s2" :src=pageContent.data.array1[1].img v-on:click="toDetail(pageContent.data.array1[1].id)"/>
       </swiper-item>
       <swiper-item>
-        <image class="s3" src="https://i.postimg.cc/PrBR5vbs/1.png" v-on:click="toDetail"/>
+        <image class="s3" :src=pageContent.data.array1[2].img v-on:click="toDetail(pageContent.data.array1[2].id)"/>
       </swiper-item>
       <swiper-item>
-        <image class="s4" src="https://i.postimg.cc/L8tN4C6L/3.png" v-on:click="toDetail"/>
+        <image class="s4" :src=pageContent.data.array1[3].img v-on:click="toDetail(pageContent.data.array1[3].id)"/>
       </swiper-item>
       <swiper-item>
-        <image class="s5" src="https://i.postimg.cc/fRN1v0V7/5.png" v-on:click="toDetail"/>
+        <image class="s5" :src=pageContent.data.array1[4].img v-on:click="toDetail(pageContent.data.array1[4].id)"/>
       </swiper-item>
     </swiper>
   </view>
@@ -48,43 +48,98 @@
     <image class = "go_2" src="/static/enter.png" v-on:click="toFanuu"/>
     <view class = "text_finduu">发现饭UU</view>
     <view class = "text_look">寻找精神灵食粮好友，偷偷看他们在吃什么！</view>
+
     <view class="container2">
-      <view class="c1">
-        <image class = "picture_1" src="https://i.postimg.cc/SK0RddWT/11.png"/>
-        <view class="container2_1">
-          <view class = "name_1">再吃亿口</view>
-          <view class = "taste_1">口味相似度100%</view>
-        </view>
-      </view>
-      <view class="c2">
-        <image class = "picture_2" src="https://i.postimg.cc/8P9zk4np/22.png"/>
-        <view class="container2_2">
-          <view class = "name_2">奶茶接班人 </view>
-          <view class = "taste_2">口味相似度99% </view>
-        </view>
-      </view>
-      <view class="c3">
-        <image class = "picture_3" src="https://i.postimg.cc/x1mTXmWK/33.png"/>
-        <view class="container2_3">
-          <view class = "name_3">清蒸奥利奥</view>
-          <view class = "taste_3">口味相似度98%</view>
-        </view>
-      </view>
-      <view class="c4">
-        <image class = "picture_4" src="https://i.postimg.cc/j5xs3FCX/44.png"/>
-        <view class="container2_4">
-          <view class = "name_4">皮蛋solo粥</view>
-          <view class = "taste_4">口味相似度95%</view>
-        </view>
-      </view>
+      <homeUU class = "sub-homeUU" v-for="(data,index) in pageContent.data.array2"
+              :img= data.img
+              :id = data.id
+              :similarity = data.similarity
+      ></homeUU>
     </view>
   </view>
 
 </template>
 
 <script>
+import {getFanuu, getSuggestion} from "../../service/apis";
+import homeUU from "../homepage/components/homeUU";
+import {reactive} from "vue";
+let id
+
+let pageContent = reactive({
+  data:{
+    array1:[
+      {
+        img:"/static/item5.jpeg",
+        id:"2223"
+      },
+      {
+        img:"/static/item2.jpg",
+        id:"2223"
+      },
+      {
+        img:"/static/item3.jpg",
+        id:"2222"
+      },
+      {
+        img:"/static/item4.jpg",
+        id:"2222"
+      },
+      {
+        img:"/static/item5.jpeg",
+        id:"2222"
+      }
+    ],
+    array2:[
+      {
+        img:"/static/tx-2.jpg",
+        id:"再吃1口",
+        similarity:90
+      },
+      {
+        img:"/static/tx-1.png",
+        id:"再吃2口",
+        similarity:90
+      },
+      {
+        img:"/static/tx-2.jpg",
+        id:"再吃3口",
+        similarity:90
+      },
+      {
+        img:"/static/tx-2.jpg",
+        id:"再吃4口",
+        similarity:90
+      }
+    ]
+  }
+})
+
 export default {
-  onLoad() {},
+  data() {
+    return {
+      pageContent
+    }
+  },
+  components:{
+    homeUU
+  },
+  onLoad() {
+    uni.getStorage({
+      key:'id',
+      success:(res) => {
+        id = res.data
+        if(res.data == undefined){
+          uni.navigateTo({
+            url: '../loginpage/index'
+          })
+        }
+        this.getData1()
+        this.getData2()
+      }
+    })
+
+  },
   methods: {
     toSuggest: () => {
       uni.navigateTo({
@@ -96,11 +151,31 @@ export default {
         url: '../fanuupage/index'
       })
     },
-    toDetail: () => {
+    toDetail: (id) => {
+       console.log(id+'*');
       uni.navigateTo({
-        url: '../detailpage/index'
+        url: '../detailpage/index?foodid='+id
       })
-    }
+    },
+    getData1: () => {
+      getSuggestion(id).then((res) => {
+        if (res.code == 1) {
+          console.log(res.data)
+          pageContent.data = {  ...pageContent.data, array1:res.data, }
+        } else {
+        }
+      })
+    },
+    getData2:() => {
+      getFanuu(id).then((res) => {
+        if(res.code==1){
+          console.log(res.data)
+          let tmp = []
+          tmp.push(res.data[0],res.data[1],res.data[2],res.data[3])
+          pageContent.data = {...pageContent.data,array2:tmp }
+        }else{}
+      })
+    },
   },
 }
 </script>
@@ -243,7 +318,7 @@ export default {
   font-family: SimHei;
   font-size: 20px;
   /*font-style: bold ;*/
-  font-weight: 900;
+  font-weight: bold;
 }
 /**app.wxss**/
 .text_help{
@@ -271,139 +346,16 @@ export default {
   margin-bottom: 2%;
   color:#7f8a94;
 }
-.container2_1{
-  width:100%;
-  height:45%;
-  background: black;
-}
-.container2_2{
-  width:100%;
-  height:45%;
-  background: black;
-}
-.container2_3{
-  width:100%;
-  height:45%;
-  background: black;
-}
-.container2_4{
-  width:100%;
-  height:45%;
-  background: black;
-}
-.c1{
-  background: black;
-  margin-left: 2%;
-  margin-bottom: 2%;
-  width: 20%;
-}
-.c2{
-  background: black;
-  margin-left: 5%;
-  margin-bottom: 2%;
-  width: 20%;
-}
-.c3{
-  background: black;
-  margin-left: 5%;
-  margin-bottom: 2%;
-  width: 20%;
-}
-.c4{
-  background: black;
-  margin-left: 5%;
-  margin-bottom: 2%;
-  width: 20%;
-}
-.picture_1
-{
-  width:100%;
-  height:50%;
-}
-.picture_2
-{
-  width:100%;
-  height:50%;
-}
-.picture_3
-{
-  width:100%;
-  height:50%;
-}
-.picture_4
-{
-  width:100%;
-  height:50%;
-}
-.name_1
-{
-  margin-left:23%;
-  margin-top: 20%;
-  font-family:SimHei;
-  font-size: 10px;
-  color:#ffffff;
-}
-.name_2
-{
-  margin-left:18%;
-  margin-top: 20%;
-  font-family:SimHei;
-  font-size: 10px;
-  color:#ffffff;
-}
-.name_3
-{
-  margin-left:15%;
-  margin-top: 20%;
-  font-family:SimHei;
-  font-size: 10px;
-  color:#ffffff;
-}
-.name_4
-{
-  margin-left:15%;
-  margin-top: 20%;
-  font-family:SimHei;
-  font-size: 10px;
-  color:#ffffff;
-}
-.taste_1
-{
-  margin-left:20%;
-  margin-top: 12px;
-  font-family:SimHei;
-  font-size: 7px;
-  color:#ffffff;
-}
-.taste_2
-{
-  margin-left:20%;
-  margin-top: 12px;
-  font-family:SimHei;
-  font-size: 7px;
-  color:#ffffff;
-}
-.taste_3
-{
-  margin-left:20%;
-  margin-top: 12px;
-  font-family:SimHei;
-  font-size: 7px;
-  color:#ffffff;
-}
-.taste_4
-{
-  margin-left:20%;
-  margin-top: 12px;
-  font-family:SimHei;
-  font-size: 7px;
-  color:#ffffff;
-}
+
 .container2 {
   display: flex;
   width: 100%;
-  height: 140px;
+  height: 170px;
   /*border: 1.5px solid #FBCA1F;*/
+}
+.sub-homeUU{
+  width:25%;
+  /*height:100%;*/
 }
 .go_1{
   position: absolute;

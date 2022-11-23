@@ -4,35 +4,36 @@ import {
 
 
 export const sendTag = (id,tag) => {
-    return postMethod("",{
+    return postMethod("/user/add_tag",{
         id,
         tag
     })
 }
 export const getSuggestion = (id) => {
-    return postMethod("",{
+    return postMethod("/user/daily_recommend",{
         id
     })
 }
 export const doLike = (id,food_id) => {
-    return postMethod("",{
+    return postMethod("/user/likes_nums",{
         id,
         food_id
     })
 }
-export const doCollect = (id,tag) => {
-    return postMethod("",{
+export const doCollect = (id,food_id) => {
+    return postMethod("/user/collcetion",{
         id,
-        tag
+        food_id
     })
 }
 export const getFanuu = (id) => {
-    return postMethod("",{
+    return postMethod("/user/recommend_friends",{
         id
     })
 }
 export const getDish = (food_id) => {
-    return postMethod("",{
+    return postMethod("/user/food_information",{
         food_id
     })
 }
+

@@ -22,7 +22,9 @@
 
 <script>
 export default {
-  onLoad() {},
+  onLoad() {
+    uni.setStorage({key:"id", data:"小明"})
+  },
   methods: {
     toLabel: () => {               //跳转到登录页面
       uni.navigateTo({

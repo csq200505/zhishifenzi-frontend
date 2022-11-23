@@ -82,18 +82,31 @@
 
 <script>
     import {sendTag} from "../../service/apis";
-
+    let id
     let array = []
     export default {
-        onLoad() {},
+        onLoad() {
+          uni.getStorage({
+            key:'id',
+            success:(res) => {
+              id = res.data
+              if(res.data == undefined){
+                uni.navigateTo({
+                  url: '../loginpage/index'
+                })
+              }
+            }
+          })
+        },
         methods: {
             toHome: () => {
-              // sendTag("",array).then((res)=>{
+               sendTag(id,array).then((res)=>{
+                 console.log(res)
                 //跳转到首页
                 uni.switchTab({
                   url: '../homepage/index'
                 })
-              // })
+               })
         },
           switch2Change: (e) => {
               let index=e.currentTarget.dataset.id
