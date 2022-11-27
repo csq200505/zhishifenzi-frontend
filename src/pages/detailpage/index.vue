@@ -34,7 +34,7 @@
 
   <view class="location">
     <image class="position" src="/static/position.png"></image>
-    <h1 class="res_name">{{ array.location+array.name }}</h1>
+    <h1 class="res_name">{{ array.location+"+店名"}}</h1>
   </view>
 
   <view class = "love">

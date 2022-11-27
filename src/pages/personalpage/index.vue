@@ -41,11 +41,11 @@
   <!--收藏的图片部分-->
   <view class="img">
     <view class="box1">
-      <p class="block1">甜品</p>
-      <image class="p1" src="/static/item9.png"></image>
-      <image class="p2" src="/static/item9.png"></image>
-      <image class="p3" src="/static/item9.png"></image>
-      <image class="p4" src="/static/item9.png"></image>
+      <p class="block1">轻食</p>
+      <image class="p1" src="/static/item8.jpg"></image>
+      <image class="p2" src="/static/item8.jpg"></image>
+      <image class="p3" src="/static/item8.jpg"></image>
+      <image class="p4" src="/static/item8.jpg"></image>
     </view>
     <view class="box2">
       <p class="block2">饮品</p>
@@ -101,7 +101,7 @@ export default {
 <style scoped>
 
 .yellowBackgound {
-background: url("/static/bg.jpeg");
+background: url("/static/background.jpg");
 background-repeat: no-repeat;
 background-size: 100% 100%; 
 position: fixed; 

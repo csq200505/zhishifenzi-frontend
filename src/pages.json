@@ -53,6 +53,9 @@
 		},
 		{
 			"path": "pages/detailpage/index"
+		},
+		{
+			"path": "pages/uupersonalpage/index"
 		}
 	],
 
