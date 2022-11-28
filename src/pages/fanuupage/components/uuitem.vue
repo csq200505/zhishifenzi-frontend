@@ -6,7 +6,7 @@
         <p class="p1">{{id}}</p>
         <p class="p2">与你口味相似度{{similarity}}%</p>
       </view>
-      <image class="arrow" src="/static/arrow2.png"></image>
+      <image class="arrow" src="/static/arrow2.png" v-on:click="toUUinfo"></image>
     </view>
 
   </view>
@@ -24,6 +24,13 @@ export default {
       title: 'uuitem',
     }
   },
+  methods: {
+    toUUinfo: () => {               //跳转到饭uu资料
+      uni.navigateTo({
+        url: '../uupersonalpage/index'
+      })
+    }
+  },
 }
 </script>
 
@@ -36,7 +43,6 @@ export default {
   margin-top: 1%;
   margin-bottom: 2%;
   padding-bottom: 2%;
-
   border-radius:35px;
 }
 .person{
