@@ -41,34 +41,41 @@
   <!--收藏的图片部分-->
   <view class="img">
     <view class="box1">
-      <p class="block1">轻食</p>
-      <image class="p1" src="/static/item8.jpg"></image>
-      <image class="p2" src="/static/item8.jpg"></image>
-      <image class="p3" src="/static/item8.jpg"></image>
-      <image class="p4" src="/static/item8.jpg"></image>
+      <view class="img_place">
+        <image class="p1" src="/static/item8.jpg"></image>
+        <image class="p2" src="/static/item8.jpg"></image>
+        <image class="p3" src="/static/item8.jpg"></image>
+        <image class="p4" src="/static/item8.jpg"></image>
+      </view>
+      <p class="food">轻食</p>
     </view>
     <view class="box2">
-      <p class="block2">饮品</p>
-      <image class="p5" src="/static/item7.jpg"></image>
-      <image class="p6" src="/static/item7.jpg"></image>
-      <image class="p7" src="/static/item7.jpg"></image>
-      <image class="p8" src="/static/item7.jpg"></image>
+      <view class="img_place">
+        <image class="p1" src="/static/item7.jpg"></image>
+        <image class="p2" src="/static/item7.jpg"></image>
+        <image class="p3" src="/static/item7.jpg"></image>
+        <image class="p4" src="/static/item7.jpg"></image>
+        </view>
+      <p class="food">饮品</p>
     </view>
     <view class="box3">
-      <p class="block3">主食</p>
-      <image class="p9" src="/static/item4.jpg"></image>
-      <image class="p10" src="/static/item4.jpg"></image>
-      <image class="p11" src="/static/item4.jpg"></image>
-      <image class="p12" src="/static/item4.jpg"></image>
+      <view class="img_place">
+        <image class="p1" src="/static/item4.jpg"></image>
+        <image class="p2" src="/static/item4.jpg"></image>
+        <image class="p3" src="/static/item4.jpg"></image>
+        <image class="p4" src="/static/item4.jpg"></image>
+      </view>
+      <p class="food">主食</p>
     </view>
     <view class="box4">
-      <p class="block4">小吃</p>
-      <image class="p13" src="/static/item6.jpg"></image>
-      <image class="p14" src="/static/item6.jpg"></image>
-      <image class="p15" src="/static/item6.jpg"></image>
-      <image class="p16" src="/static/item6.jpg"></image>
+      <view class="img_place">
+        <image class="p1" src="/static/item6.jpg"></image>
+        <image class="p2" src="/static/item6.jpg"></image>
+        <image class="p3" src="/static/item6.jpg"></image>
+        <image class="p4" src="/static/item6.jpg"></image>
+      </view>
+      <p class="food">小吃</p>
     </view>       
-      
   </view>
 
   <view class="button">
@@ -105,7 +112,8 @@ background: url("/static/background.jpg");
 background-repeat: no-repeat;
 background-size: 100% 100%; 
 position: fixed; 
-height: 100%; 
+margin-top: -100%;
+height: 200%; 
 width: 100%; 
 }
 
@@ -114,7 +122,7 @@ width: 100%;
 height: 20%;
 position:fixed;
 background:white;
-margin-top: 25%;
+margin-top: 50%;
 background-repeat: no-repeat;
 border-radius:35px;
 }
@@ -227,158 +235,99 @@ border-radius:35px;
 /*  left: 35%;*/
 /*}*/
 
-.block1 {
-  position: fixed;
-  top: 61%;
-  left: 23%;
-  font-family:'Arial Narrow';
-  font-size: 12px;
+.box1 {
+  width: 125px;
+  height: 125px;
+  border-style: solid;
+  position: relative;
+  margin-top: 73.5%; 
+  margin-left: 9.5%;
+  border-width: 6px;
+  border-radius: 20px;
+  border-color: #ffffff;
+}
+.box2 {
+  width: 125px;
+  height: 125px;
+  border-style: solid;
+  position: relative;
+  margin-top: -35.5%;
+  margin-left: 55%;
+  border-width: 6px;
+  border-radius: 20px;
+  border-color: #ffffff;
+}
+.box3 {
+  width: 125px;
+  height: 125px;
+  border-style: solid;
+  position: relative;
+  margin-top: 16%;
+  margin-left: 9.5%;
+  border-width: 6px;
+  border-radius: 20px;
+  border-color: #ffffff;
+}
+.box4 {
+  width: 125px;
+  height: 125px;
+  border-style: solid;
+  position: relative;
+  margin-top: -35.5%;
+  margin-left: 55%;
+  border-width: 6px;
+  border-radius: 20px;
+  border-color: #ffffff;
+}
+.food {
+  position: relative;
+  margin-top: 12%;
+  margin-left: 38%;
+}
+.img_place {
+  /*position: relative;*/
+  /*margin-top: 2.5%;*/
+  /*margin-left: 3%;*/
+  /*display:flex;*/
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  width:100%;
+  padding: 3%;
 }
 
 .p1 {
   height: 110rpx;
   width: 110rpx;
-  position: fixed;
-  top: 39%;
-  left: 12%;
+  border-radius: 10px;
+  position: relative;
 }
 .p2 {
   height: 110rpx;
   width: 110rpx;
-  position: fixed;
-  top: 39%;
-  left: 28%;
+  border-radius: 10px;
+  position: relative;
+  margin-left: 3%;
 }
 .p3 {
   height: 110rpx;
   width: 110rpx;
-  position: fixed;
-  top: 50%;
-  left: 12%;
+  border-radius: 10px;
+  position: relative;
 }
 .p4 {
   height: 110rpx;
   width: 110rpx;
-  position: fixed;
-  top: 50%;
-  left: 28%;
-}
-
-
-.block2 {
-  position: fixed;
-  top: 61%;
-  right: 23%;
-  font-family:'Arial Narrow';
-  font-size: 12px;
-}
-
-.p5 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 39%;
-  right: 12%;
-}
-.p6 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 39%;
-  right: 28%;
-}
-.p7 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 50%;
-  right: 28%;
-}
-.p8 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 50%;
-  right: 12%;
-}
-
-.block3 {
-  position: fixed;
-  top: 89%;
-  left: 23%;
-  font-family:'Arial Narrow';
-  font-size: 12px;
-}
-.p9 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 67%;
-  left: 12%;
-}
-.p10 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 67%;
-  left: 28%;
-}
-.p11 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 78%;
-  left: 12%;
-}
-.p12 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 78%;
-  left: 28%;
-}
-
-.block4 {
-  position: fixed;
-  top: 89%;
-  right: 23%;
-  font-family:'Arial Narrow';
-  font-size: 12px;
-}
-.p13 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 67%;
-  right: 12%;
-}
-.p14 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 67%;
-  right: 28%;
-}
-.p15 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 78%;
-  right: 28%;
-}
-.p16 {
-  height: 110rpx;
-  width: 110rpx;
-  position: fixed;
-  top: 78%;
-  right: 12%;
+  border-radius: 10px;
+  position: relative;
+  margin-left: 3%;
 }
 
 .b1 {
   position: fixed;
-  top: 92%;
-  left: 21%;
-  height: 50rpx;
+  top: 89%;
+  left: 23%;
+  height: 60rpx;
   width: 160rpx;
   margin-top: 10rpx;
   margin-left: 120rpx;
@@ -394,6 +343,7 @@ border-radius:35px;
   border-radius: 1.5em;
   box-shadow: 0.1em 0.1em;
   flex-direction: row;
+  font-size: x-small;
 }
 
 </style>

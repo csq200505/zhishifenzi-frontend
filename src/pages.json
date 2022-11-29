@@ -45,6 +45,7 @@
 				"navigationBarTitleText": ""
 			}
 		},
+
 		{
 			"path": "pages/fanuupage/index",
 			"style": {
@@ -56,6 +57,12 @@
 		},
 		{
 			"path": "pages/uupersonalpage/index"
+		},
+		{
+			"path": "pages/toplistpage/index",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
 	],
 
