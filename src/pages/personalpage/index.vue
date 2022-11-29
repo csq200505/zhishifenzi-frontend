@@ -236,8 +236,8 @@ border-radius:35px;
 /*}*/
 
 .box1 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
   margin-top: 73.5%; 
@@ -247,33 +247,33 @@ border-radius:35px;
   border-color: #ffffff;
 }
 .box2 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
-  margin-top: -35.5%; 
+  margin-top: -35.5%;
   margin-left: 55%;
   border-width: 6px;
   border-radius: 20px;
   border-color: #ffffff;
 }
 .box3 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
-  margin-top: 16%; 
+  margin-top: 16%;
   margin-left: 9.5%;
   border-width: 6px;
   border-radius: 20px;
   border-color: #ffffff;
 }
 .box4 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
-  margin-top: -35.5%; 
+  margin-top: -35.5%;
   margin-left: 55%;
   border-width: 6px;
   border-radius: 20px;
@@ -285,9 +285,15 @@ border-radius:35px;
   margin-left: 38%;
 }
 .img_place {
-  position: relative;
-  margin-top: 2.5%;
-  margin-left: 3%;
+  /*position: relative;*/
+  /*margin-top: 2.5%;*/
+  /*margin-left: 3%;*/
+  /*display:flex;*/
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  width:100%;
+  padding: 3%;
 }
 
 .p1 {

@@ -220,8 +220,8 @@ export default {
 }
 
 .box1 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
   margin-top: 73.5%; 
@@ -231,19 +231,19 @@ export default {
   border-color: #FBCA1F;
 }
 .box2 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
-  margin-top: -35.5%; 
+  margin-top: -35.5%;
   margin-left: 55%;
   border-width: 6px;
   border-radius: 20px;
   border-color: #FBCA1F;
 }
 .box3 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
   margin-top: 16%; 
@@ -253,11 +253,11 @@ export default {
   border-color: #FBCA1F;
 }
 .box4 {
-  width: 120px;
-  height: 120px;
+  width: 125px;
+  height: 125px;
   border-style: solid;
   position: relative;
-  margin-top: -35.5%; 
+  margin-top: -35.5%;
   margin-left: 55%;
   border-width: 6px;
   border-radius: 20px;
@@ -269,9 +269,12 @@ export default {
   margin-left: 38%;
 }
 .img_place {
-  position: relative;
-  margin-top: 2.5%;
-  margin-left: 3%;
+  /*display:flex;*/
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  width:100%;
+  padding: 3%;
 }
 
 .p1 {
