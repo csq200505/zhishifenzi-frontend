@@ -1,33 +1,33 @@
 <template>
-  <view class="list">
-    <view class="friend">
-      <image class="profile" src="/static/tx-2.jpg"></image>
-      <h2 class="name">再吃亿口</h2>
+
+  <view class="share">
+    <view class="photo">
+        <image class="ph1" :src=array.img ></image>
     </view>
   </view>
 
-  <view class="share">
-    <swiper class="swiper">
-      <swiper-item>
-        <image class="ph1" :src=array.img ></image>
-        <view class="num">1</view>
-      </swiper-item>
-      <swiper-item>
-        <image class="ph2" src="/static/item3.jpg"></image>
-        <view class="num">2</view>
-      </swiper-item>
-      <swiper-item>
-        <image class="ph3" src="/static/item6.jpg"></image>
-        <view class="num">3</view>
-      </swiper-item>
-    </swiper>
+  <view class="food_info">
+  <view class="food_title">
+    <view class="foodname">鸡排蛋包饭</view>
   </view>
+    <view class="foodprice">
+      <view class="food_lp">
+      <view class="money_label">￥</view>
+      <view class="price">15</view>
+    </view>
+  
+  <view class="food_label">
+      <view class="foodlabel">快餐便当</view>
+    </view>
+  
+</view>
+</view>
 
   <view class="text">
-    <h1 class="content">好吃好吃好吃好吃好吃好吃好吃好吃好吃
+    <view class="content">好吃好吃好吃好吃好吃好吃好吃好吃好吃
       喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢
       大家都来吃啊！！！大家都来吃啊！！！
-    </h1>
+    </view>
   </view>
 
 
@@ -43,6 +43,9 @@
     <view class = "like_num">{{ array.like_nums }}</view>
     <image class = "collect" :src=collectSrc.src v-on:click="doCollectClick"/>
   </view>
+
+
+
 </template>
 
 
@@ -134,63 +137,94 @@ export default{
 
 
 <style scoped>
-.friend
-{
-  display:flex;
-  margin-left: 1%;
-}
-.profile
-{
-  height: 110rpx;
-  width: 110rpx;
-  border-radius:200px;
-  border: 1px solid rgb(91, 59, 0);
-  margin-top: 2%;
 
-}
-.name
+.photo
 {
-  font-size: 40rpx;
-  color: #000000;
-  font-weight: bolder;
-  margin-top: 6.5%;
-  margin-left: 3%;
-}
-.swiper
-{
-  height:292px;
+  height:320px;
   width:100%;
-  margin-top:3%;
+  /* margin-top:3%; */
 }
 .ph1
 {
   width:100%;
   height:100%;
+  /* border-radius:15px; */
 }
-.ph2
+.food_info
 {
-  width:100%;
-  height:100%;
+  margin-left:1%;
 }
-.ph3
+.food_title
 {
-  width:100%;
-  height:100%;
+  /* background:orange; */
+  margin-left:3%;
+  margin-top:5%;
+  /* display: flex; */
+} 
+.foodname
+{
+  font-size: 35px;
 }
-.num
+.foodprice
 {
-  margin-left:95%;
-  margin-top:-10%;
-  font-size: 25px;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color:rgba(255, 255, 0, 0.795);
+  margin-left:3%;
+  margin-top:1%;
+  display: flex;
 }
-.text
+.food_lp
 {
-  font-size:45rpx;
-  padding: 20px;
+  color:rgb(255, 77, 0);
+  display: flex;
+  margin-top:1%;
+ 
 }
 
+.money_label
+{
+  font-size: 20px;
+  margin-top:8%;
+  
+  
+}
+.price
+{
+  font-size: 25px;
+  margin-left:-2%;
+ 
+  
+}
+.food_label
+{
+  margin-top:2%;
+  margin-left:6%;
+  width: 100px;
+  height: 30px;
+  border-radius:35px;
+  background-color: #fbcb1fc5;
+  
+}
+.foodlabel
+{
+  font-size: 20px;
+  margin-left:8%;
+}
+
+.text
+{
+  margin-top:3%;
+  margin-left:2%;
+  width: 96%;
+  
+  background-color: rgb(249, 249, 249);
+  /* background-color: aqua; */
+  border-radius:20px;
+ 
+}
+.content
+{
+  font-size:25px;
+  padding: 12px;
+}
 .love{
   margin-left:58%;
   top:90%;
@@ -221,6 +255,7 @@ export default{
 
 .location
 {
+  margin-top:4%;
   display:flex;
   top:83%;
   width: 100%;
@@ -230,14 +265,13 @@ export default{
 }
 .position
 {
-  height: 50rpx;
-  width: 50rpx;
+  height: 60rpx;
+  width: 60rpx;
 }
 .res_name
 {
   font-size:40rpx;
   margin-top:0.5%;
   margin-left:1%;
-  font-family: SimHei;
 }
 </style>
