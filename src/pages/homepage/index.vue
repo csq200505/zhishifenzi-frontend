@@ -14,7 +14,7 @@
       </view>
     </view>
     <view class="button_1_2">
-      <button class = "b1">美食排行榜</button>
+      <button class = "b1" v-on:click="toTopList">美食排行榜</button>
       <button class = "b2">店面排行榜</button>
     </view>
 
@@ -141,6 +141,11 @@ export default {
 
   },
   methods: {
+    toTopList: () => {
+      uni.navigateTo({
+        url: '../toplistpage/index'
+      })
+    },
     toSuggest: () => {
       uni.navigateTo({
         url: '../suggestpage/index'
@@ -308,7 +313,7 @@ export default {
   display: flex;
   /*border: 1.5px solid #FBCA1F;*/
 }
-/**index.wxss**/
+/**index.vue.wxss**/
 .box_1{
   border: 1.5px solid #FBCA1F;
   margin: 2%;
