@@ -31,9 +31,43 @@ export const getFanuu = (id) => {
         id
     })
 }
-export const getDish = (food_id) => {
+export const getDish = (id,food_id) => {
     return postMethod("/user/food_information",{
+        id,
         food_id
+    })
+}
+
+export const login = (platCode) => {
+    return postMethod("/user/login",{
+        platCode
+    })
+}
+export const creatNick = (id,openid) => {
+    return postMethod("/user/create_id",{
+        id,
+        openid
+    })
+}
+export const setInfo = (id,head,sex,identity,signature) => {
+    return postMethod("/user/alter_user",{
+        id,
+        head,
+        sex,
+        identity,
+        signature
+    })
+}
+export const personalInfo = (id) => {
+    return postMethod("/user/person_imformation",{
+        id,
+
+    })
+}
+export const foodTopList = (tag) => {
+    return postMethod("/user/food_rank",{
+        tag
+
     })
 }
 

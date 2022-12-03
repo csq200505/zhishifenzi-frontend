@@ -4,9 +4,9 @@
       <image class="tx" :src=img></image>
       <view class="text">
         <p class="p1">{{id}}</p>
-        <p class="p2">与你口味相似度{{similarity}}%</p>
+        <p class="p2">与你口味相似度{{similarity}}</p>
       </view>
-      <image class="arrow" src="/static/arrow2.png" v-on:click="toUUinfo"></image>
+      <image class="arrow" src="/static/arrow2.png" v-on:click="toUUinfo(id)"></image>
     </view>
 
   </view>
@@ -25,9 +25,9 @@ export default {
     }
   },
   methods: {
-    toUUinfo: () => {               //跳转到饭uu资料
+    toUUinfo: (id) => {               //跳转到饭uu资料
       uni.navigateTo({
-        url: '../uupersonalpage/index'
+        url: '../uupersonalpage/index?uuid='+id
       })
     }
   },

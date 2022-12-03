@@ -192,10 +192,10 @@ export default {
   flex-direction:column;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width:100%;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
   height: 1250px;
 }
-
 
 .sub-card1{
   width:50%;

@@ -50,11 +50,14 @@
     <view class = "text_look">寻找精神灵食粮好友，偷偷看他们在吃什么！</view>
 
     <view class="container2">
-      <homeUU class = "sub-homeUU" v-for="(data,index) in pageContent.data.array2"
+      <view class = "sub-homeUU" v-for="(data,index) in pageContent.data.array2"
+            @click = "toUUinfo(data.id)">
+      <homeUU
               :img= data.img
               :id = data.id
               :similarity = data.similarity
       ></homeUU>
+    </view>
     </view>
   </view>
 
@@ -160,6 +163,11 @@ export default {
        console.log(id+'*');
       uni.navigateTo({
         url: '../detailpage/index?foodid='+id
+      })
+    },
+    toUUinfo: (id) => {               //跳转到饭uu资料
+      uni.navigateTo({
+        url: '../uupersonalpage/index?uuid='+id
       })
     },
     getData1: () => {

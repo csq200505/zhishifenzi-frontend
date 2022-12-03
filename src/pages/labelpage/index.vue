@@ -100,7 +100,10 @@
         },
         methods: {
             toHome: () => {
-               sendTag(id,array).then((res)=>{
+              let resultArray = array.map((value)=> {
+                return Number(value)
+              })
+              sendTag(id,resultArray).then((res)=>{
                  console.log(res)
                 //跳转到首页
                 uni.switchTab({
@@ -124,7 +127,7 @@
 
 <style scoped>
 .content {
-background: url("/static/bg.jpeg");
+background: url("/static/background.jpg");
 background-repeat: no-repeat;
 background-size: 100% 100%; 
 position: fixed; 

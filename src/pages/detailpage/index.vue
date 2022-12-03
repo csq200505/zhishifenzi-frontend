@@ -8,16 +8,16 @@
 
   <view class="food_info">
   <view class="food_title">
-    <view class="foodname">鸡排蛋包饭</view>
+    <view class="foodname">{{ array.name}}</view>
   </view>
     <view class="foodprice">
       <view class="food_lp">
       <view class="money_label">￥</view>
-      <view class="price">15</view>
+      <view class="price">{{ array.price}}</view>
     </view>
   
   <view class="food_label">
-      <view class="foodlabel">快餐便当</view>
+      <view class="foodlabel">{{ array.food_type}}</view>
     </view>
   
 </view>
@@ -34,7 +34,7 @@
 
   <view class="location">
     <image class="position" src="/static/position.png"></image>
-    <h1 class="res_name">{{ array.location+"+店名"}}</h1>
+    <h1 class="res_name">{{ array.location}}</h1>
   </view>
 
   <view class = "love">
@@ -52,8 +52,11 @@
 <script>
 import {doCollect, doLike,getDish} from "../../service/apis";
 import {ref} from "vue";
+import {typeName} from "../../common/foodtype";
+
 let id
 let food_id = null
+
 let collectSrc= ref({
     src:"/static/star_empty.png"
 })
@@ -61,10 +64,13 @@ let likeSrc= ref({
   src:"/static/like_empty.png"
 })
 let array= ref({
+    food_type:1,
+    id:22,
     img:"/static/item1.jpeg",
+    like_nums:0,
     location:"玫瑰一楼",
      name:"烧腊简餐",
-     like_nums:0,
+      price:0
 })
 
 export default{
@@ -72,7 +78,8 @@ export default{
     return{
       collectSrc,
       likeSrc,
-      array
+      array,
+
     };
   },
   onLoad(e){
@@ -83,6 +90,7 @@ export default{
       key:'id',
       success:(res) => {
         id = res.data
+        id = '小明'
         console.log(id)
         if(res.data == undefined){
           uni.navigateTo({
@@ -99,9 +107,11 @@ export default{
   methods:{
     getData: () => {
       console.log(food_id+'***')
-      getDish(food_id).then((res)=>{
+      getDish(id,food_id).then((res)=>{
         console.log(res)
-        if(res.code==0){
+        if(res.code==1){
+          console.log(res.data[0])
+          res.data[0].food_type = typeName(res.data[0].food_type)
           console.log(res.data[0])
           array.value = res.data[0]
         }else{}

@@ -1,10 +1,21 @@
 <template>
+  <view>
   <view class="title">
     <view class = "top_text">热门美食奉之</view>
   </view>
+  <view class="collectlist">
+    <p style="border-style: groove"></p>
+  </view>
+  <!-- 8个label -->
+  <view class="outerBox">
+    <div class="frontBox" :class="[item.showCode ? 'frontBox' : 'laterBox']" v-for="(item,index) in dataList" :key="index"
+         @click="onCilck(index)">
+      <div style="margin-left: -6px">{{item.name}}</div>
+    </div>
+  </view>
 
   <view class = "container">
-    <view class = "sub-card1" v-for="(data,index) in array1"
+    <view class = "sub-card" v-for="(data,index) in array"
           @click = "toDetail(data.id)">
       <card
           :img=data.img
@@ -13,30 +24,13 @@
           :like_nums = data.like_nums
       ></card>
     </view>
-    <view class = "sub-card2" v-for="(data,index) in array"
-          @click = "toDetail(data.id)">
-      <card
-          :img=data.img
-          :name = data.name
-          :note = data.note
-          :like_nums = data.like_nums
-      ></card>
-    </view>
-    <view class = "sub-card3" v-for="(data,index) in array2"
-          @click = "toDetail(data.id)">
-      <card
-          :img=data.img
-          :name = data.name
-          :note = data.note
-          :like_nums = data.like_nums
-      ></card>
-    </view>
+  </view>
   </view>
 </template>
 
 <script>
-import card from '../suggestpage/components/card'
-import {getSuggestion} from "../../service/apis";
+import card from '../toplistpage/components/card'
+import {foodTopList} from "../../service/apis";
 import {ref} from "vue";
 let id
 // let array1 =  reactive([
@@ -115,19 +109,60 @@ let id
 //     like_nums:3243
 //   }
 // ])
-let array1 = ref([])
-let array2 = ref([])
 let array = ref([])
+const currentTab = ref(0)
 export default {
   data() {
     return {
-      array1,array,array2
-    }
+      array,
+      currentTab,
+      dataList: [
+        {
+          name: "全部美食",
+          showCode: true,
+        },{
+          name: "快餐便当",
+          showCode: true,
+        },
+        {
+          name: "汉堡薯条",
+          showCode: true,
+        },
+        {
+          name: "意面披萨",
+          showCode: true,
+        },
+        {
+          name: "日料寿司",
+          showCode: true,
+        },
+        {
+          name: "火锅香锅",
+          showCode: true,
+        },
+        {
+          name: "烧烤串串",
+          showCode: true,
+        },
+        {
+          name: "奶茶甜点",
+          showCode: true,
+        },
+        {
+          name: "轻食沙拉",
+          showCode: true,
+        },
+      ],
+    };
+  },
+  mounted() {
+    //如果需要默认选择某一个，指定该div下标为false即可
+    this.dataList[currentTab.value].showCode = false
   },
   components:{
     card
   },
-  onLoad() {
+  onShow() {
     uni.getStorage({
       key:'id',
       success:(res) => {
@@ -145,28 +180,48 @@ export default {
   methods:{
     getData:() => {
       console.log("*")
-      getSuggestion(id).then((res) => {
+      if(currentTab.value==0)currentTab.value='all'
+      else currentTab.value=String(currentTab.value)
+      foodTopList(currentTab.value).then((res) => {
         console.log(res)
-        if(res.code==1){
-          let tmp = res.data
-          let tmp1 = []
-          let tmp2 = []
-          tmp1.push(tmp[9])
-          tmp.pop()
-          tmp2.push(tmp[8])
-          tmp.pop()
-          array.value = tmp
-          array1.value = tmp1
-          array2.value = tmp2
-        }else{}
+
+          array.value = res.data
+
       })
+      if(currentTab.value=='all')currentTab.value=0
+      else currentTab.value=Number(currentTab.value)
     },
     toDetail(id) {
       console.log(id+'*')
       uni.navigateTo({
         url: '../detailpage/index?foodid='+id
       })
-    }
+    },
+    // 点击事件
+    onCilck(index) {
+      for (var i = 0; i < this.dataList.length; i++) {
+        // index：当前点击的div下标（通过点击事件触发拿到的）
+        // i：循环拿到的每一条div下标
+        if (index == i) {
+          // 通过将两者比较得出应该展示哪一种样式
+          // this.dataList[i].showCode = false;//点击当前div，再次点击当前div不会恢复默认样式，必须点击其他div才会恢复默认样式
+          this.dataList[i].showCode = !this.dataList[i].showCode; //点击当前div，再次点击当前div恢复默认样式，无需点击其他div恢复默认样式
+        } else {
+          this.dataList[i].showCode = true;
+        }
+      }
+      currentTab.value = index
+      if(currentTab.value==0)currentTab.value='all'
+      else currentTab.value=String(currentTab.value)
+      foodTopList(currentTab.value).then((res) => {
+        console.log(res)
+
+          array.value = res.data
+
+      })
+      if(currentTab.value=='all')currentTab.value=0
+      else currentTab.value=Number(currentTab.value)
+    },
   }
 }
 </script>
@@ -177,11 +232,12 @@ export default {
   height:40px;
   /*border: 1.5px solid #DCDCDC;*/
   background: white;
+  color: black;
 }
 .top_text{
   font-weight:normal;
   font-family: STZhongsong;
-  font-size: 22px;
+  font-size: 23px;
   text-align: center;
   padding-top: 6px;
   letter-spacing: 2.5px;
@@ -198,27 +254,64 @@ export default {
 .container{
   background-color: #FBCA1F;
   display:flex;
-  flex-direction:column;
+  flex-direction:row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  width:100%;
-  height: 1250px;
+  margin-top: 30%;
+  padding-top: 5px;
+  padding-left: 0.5%;
+  padding-right: 0.5%;
+  position: relative;
 }
 
-
-.sub-card1{
-  width:50%;
-  height: 220px;
+.collectlist {
+  position: relative;
 }
 
-.sub-card2{
+.sub-card{
   width:50%;
   height: 250px;
+  padding-bottom: 5px;
 }
 
-.sub-card3{
-  width:50%;
-  height: 220px;
+.outerBox {
+  position: absolute;
+  display: flex;
+}
+/* 公共样式 */
+.frontBox {
+  cursor: pointer;
+  width: 80px;
+  padding: 14px 12.5px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  align-content: center;
+  font-weight: bold;
+  margin-right: 20px;
+  font-size: 17px;
+  text-align: center;
+}
+/* 默认样式 */
+.frontBox {
+  font-weight:normal;
+  background: white;
+  color: black;
+  width:5px ;
+  height:70px;
+  margin-left: -4.5px;
+  ;
+}
+/* 点击后样式 */
+.laterBox {
+  background: #FBCA1F;
+  color: #151515;
+  width:5px ;
+  height:70px;
+  font-weight:normal;
+  align-content: center;
 }
 
 </style>

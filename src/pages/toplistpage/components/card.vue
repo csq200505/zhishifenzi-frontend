@@ -7,7 +7,7 @@
         <view class = "foodname">{{name}}</view>
         <image class = "loc" src="/static/location.png" />
       </view>
-      <view class = "footnote">{{note}}</view>
+      <view class = "footnote">超好吃</view>
 
       <!--      <view class = "special" v-if="special == 0?true:false">饭友推荐！</view>-->
 
@@ -103,6 +103,6 @@ export default {
 }
 .like-num{
   font-size: 10px;
-  color: #8f8f94;
+  color: black;
 }
 </style>
