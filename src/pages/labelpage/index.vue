@@ -12,7 +12,7 @@
 
         <view class="type2">
             <image class="item2" src="/static/item2.jpg"></image> 
-            <h1 class="text2">汉堡薯条</h1>
+            <h1 class="text2">米粉面食</h1>
             <view class="choose2">
                 <switch data-id="2" type="checkbox" checked="{{switch2Checked}}" @change="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   
@@ -20,7 +20,7 @@
 
         <view class="type3">
             <image class="item3" src="/static/item3.jpg"></image> 
-            <h1 class="text3">意面披萨</h1>
+            <h1 class="text3">汉堡西餐</h1>
             <view class="choose3">
                 <switch data-id="3" type="checkbox" checked="{{switch2Checked}}" @change="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   
@@ -28,7 +28,7 @@
 
         <view class="type4">
             <image class="item4" src="/static/item4.jpg"></image> 
-            <h1 class="text4">日料寿司</h1>
+            <h1 class="text4">日韩料理</h1>
             <view class="choose4">
                 <switch data-id="4" type="checkbox" checked="{{switch2Checked}}" @change="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   
@@ -36,7 +36,7 @@
 
         <view class="type5">
             <image class="item5" src="/static/item5.jpeg"></image> 
-            <h1 class="text5">火锅香锅</h1>
+            <h1 class="text5">香锅水煮</h1>
             <view class="choose5">
                 <switch data-id="5" type="checkbox" checked="{{switch2Checked}}" @change="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   
@@ -60,7 +60,7 @@
 
         <view class="type8">
             <image class="item8" src="/static/item8.jpg"></image> 
-            <h1 class="text8">轻食沙拉</h1>
+            <h1 class="text8">轻食小吃</h1>
             <view class="choose8">
                 <switch data-id="8" type="checkbox" checked="{{switch2Checked}}" @change="switch2Change" color="orange" style="transform:scale(1.2);"/>
             </view>   

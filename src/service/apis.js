@@ -64,10 +64,10 @@ export const personalInfo = (id) => {
 
     })
 }
-export const foodTopList = (tag) => {
+export const foodTopList = (tag,num) => {
     return postMethod("/user/food_rank",{
-        tag
-
+        tag,
+        num
     })
 }
 

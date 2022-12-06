@@ -5,19 +5,19 @@ const typeArray = [
     },
     {
         typeId:2,
-        name:'汉堡薯条'
+        name:'米粉面食'
     },
     {
         typeId:3,
-        name:'意面披萨'
+        name:'汉堡西餐'
     },
     {
         typeId:4,
-        name:'日料寿司'
+        name:'日韩料理'
     },
     {
         typeId:5,
-        name:'火锅香锅'
+        name:'香锅水煮'
     },
     {
         typeId:6,
@@ -29,7 +29,7 @@ const typeArray = [
     },
     {
         typeId:8,
-        name:'轻食沙拉'
+        name:'轻食小吃'
     },
 ]
 

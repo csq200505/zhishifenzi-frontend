@@ -22,6 +22,8 @@
             @click = "toDetail(data.food_id)">
         <card
             :img=data.img
+            :name=data.food_id
+            :tag=typeChange(data.tag)
         ></card>
       </view>
     </view>
@@ -35,6 +37,7 @@
 import {personalInfo} from "../../service/apis";
 import { ref } from "vue";
 import card from "./components/card";
+import {typeName} from "../../common/foodtype";
 let id = ref("贴一张芝士面膜")
 let touxiang = ref("/static/tx-1.png")
 let array = ref([])
@@ -85,11 +88,11 @@ export default {
           signature.value = res.data[0].signature
           if(signature.value==null)signature.value='....'
           array.value = res.data[0].collectionlist
-          if(id.value.length>10)id.value=id.value.slice(0,10)+'...'
-          if(signature.value.length>25)signature.value=signature.value.slice(0,25)+'...'
+          if(id.value.length>9)id.value=id.value.slice(0,9)+'...'
+          if(signature.value.length>23)signature.value=signature.value.slice(0,23)+'...'
         } else {
-          if(id.value.length>10)id.value=id.value.slice(0,10)+'...'
-          if(signature.value.length>25)signature.value=signature.value.slice(0,25)+'...'
+          if(id.value.length>9)id.value=id.value.slice(0,9)+'...'
+          if(signature.value.length>23)signature.value=signature.value.slice(0,23)+'...'
         }
       })
     },
@@ -98,7 +101,10 @@ export default {
      uni.navigateTo({
        url: '../detailpage/index?foodid='+id
      })
-   }
+   },
+    typeChange(tag){
+      return typeName(tag)
+    }
  }
 
 }
@@ -136,15 +142,16 @@ border-radius:35px;
   position: absolute;
   top: 52%;
   left: 8%;
-  width: 210px;
+  width: 55%;
 }
 .motto {
   font-family: 'Times New Roman', Times, serif;
   color: grey;
   position: absolute;
-  top: 70%;
+  top: 68%;
   left: 8%;
-  width: 210px;
+  width: 55%;
+  line-height: 25px;
 }
 .tx {
   height: 200rpx;
@@ -155,7 +162,7 @@ border-radius:35px;
   left:65%;
 }
 .collectlist{
-  margin-top:0%;
+  margin-top:2%;
   width: 100%;
   display: flex;
   position: relative;
@@ -175,25 +182,39 @@ border-radius:35px;
   margin-left: 42%;
 }
 
+/*.container{*/
+/*  background-color: #fdcd3f;*/
+/*  display:flex;*/
+/*  flex-direction:row;*/
+/*  flex-wrap: wrap;*/
+/*  justify-content: left;*/
+/*  padding-left: 5%;*/
+/*  padding-right: 4%;*/
+/*  position: absolute;*/
+/*  margin-top: 3%;*/
+/*  width: 91%;*/
+/*}*/
+
+/*.sub-card{*/
+/*  width:24%;*/
+/*  height: 80px;*/
+/*  padding-bottom: 10px;*/
+/*  padding-right: 1%;*/
+/*}*/
 .container{
-  background-color: #fdcd3f;
+    background-color: #fdcd3f;
   display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content: left;
-  padding-left: 5%;
-  padding-right: 4%;
-  position: absolute;
-  margin-top: 3%;
-  width: 91%;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  width:100%;
+  padding-bottom:10px;
 }
 
 .sub-card{
-  width:24%;
-  height: 80px;
-  padding-bottom: 10px;
-  padding-right: 1%;
+  margin-top: 15px;
+  width:100%;
+  height: 100px;
 }
-
 
 </style>

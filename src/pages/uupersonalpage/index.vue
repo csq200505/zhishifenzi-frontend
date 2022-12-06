@@ -41,6 +41,8 @@
           @click = "toDetail(data.food_id)">
       <card
           :img=data.img
+          :name=data.food_id
+          :tag=typeChange(data.tag)
       ></card>
     </view>
   </view>
@@ -51,6 +53,7 @@
 import {personalInfo} from "../../service/apis";
 import {ref} from "vue";
 import card from "./components/card";
+import {typeName} from "../../common/foodtype";
 
 let uuid = ref("")
 
@@ -83,10 +86,10 @@ export default {
         sex.value = res.data[0].sex
         if(sex.value==null)sex.value='男'
         if(uuid.value.length>9)uuid.value=uuid.value.slice(0,9)+'...'
-        if(signature.value.length>9)signature.value=signature.value.slice(0,9)+'...'
+        if(signature.value.length>12)signature.value=signature.value.slice(0,12)+'...'
       }else{
         if(uuid.value.length>9)uuid.value=uuid.value.slice(0,9)+'...'
-        if(signature.value.length>9)signature.value=signature.value.slice(0,9)+'...'
+        if(signature.value.length>12)signature.value=signature.value.slice(0,12)+'...'
       }
 
     })
@@ -100,6 +103,9 @@ export default {
       uni.navigateTo({
         url: '../detailpage/index?foodid='+id
       })
+    },
+    typeChange(tag){
+      return typeName(tag)
     }
 
   },
@@ -139,14 +145,15 @@ export default {
 }
 .tag1 {
   position: absolute;
+  font-size: 14px;
 }
 .name{
-  margin-left: 55px;
-  margin-top: -2px;
+  margin-left: 50px;
+  margin-top: -1.5px;
   position: absolute;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: bold;
-  width: 190px;
+  width: 45%;
 }
 .text2{
   margin-left:37%;
@@ -157,14 +164,16 @@ export default {
 }
 .tag2 {
   position: absolute;
+  font-size: 14px;
 }
 .motto{
-  margin-left: 55px;
-  margin-top: -2px;
+  margin-left: 50px;
+  margin-top: -2.5px;
   position: absolute;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: bold;
-  width: 190px;
+  width: 45%;
+  line-height: 25px;
 }
 .line1{
   border-style: groove;
@@ -182,14 +191,15 @@ export default {
 }
 .tag3 {
   position: absolute;
+  font-size: 14px;
 }
 .sex{
-  margin-left: 55px;
-  margin-top: -2px;
+  margin-left: 50px;
+  margin-top: -1px;
   position: absolute;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: bold;
-  width: 190px;
+  width: 180px;
 }
 .text4{
   margin-left:10%;
@@ -200,14 +210,15 @@ export default {
 }
 .tag4 {
   position: absolute;
+  font-size: 14px;
 }
 .foodTag{
-  margin-left: 90px;
-  margin-top: -2px;
+  margin-left: 80px;
+  margin-top: 0px;
   position: absolute;
-  font-size: 19px;
+  font-size: 16px;
   font-weight: bold;
-  width: 190px;
+  width: 180px;
 }
 .line2{
   border-style: groove;
@@ -215,8 +226,6 @@ export default {
   margin-left: 5%;
   margin-right: 5%;
 }
-
-
 
 
 .collectlist{
@@ -243,21 +252,17 @@ export default {
 .container{
   background-color: #ffffff;
   display:flex;
-  flex-direction:row;
-  flex-wrap: wrap;
-  justify-content: left;
-  padding-left: 5%;
-  padding-right: 4%;
-  position: absolute;
-  margin-top: 3%;
-  width: 91%;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content: space-evenly;
+  width:100%;
+  padding-bottom:10px;
 }
 
 .sub-card{
-  width:24%;
-  height: 80px;
-  padding-bottom: 10px;
-  padding-right: 1%;
+  margin-top: 15px;
+  width:100%;
+  height: 100px;
 }
 
 .b1 {

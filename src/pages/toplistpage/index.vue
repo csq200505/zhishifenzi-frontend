@@ -112,6 +112,7 @@ let id
 // ])
 let array = ref([])
 let arr =['超级好吃！','饭友推荐~','今日最佳','大家快来！','多人收藏']
+let num=30
 
 const currentTab = ref(0)
 export default {
@@ -129,19 +130,19 @@ export default {
           showCode: true,
         },
         {
-          name: "汉堡薯条",
+          name: "米粉面食",
           showCode: true,
         },
         {
-          name: "意面披萨",
+          name: "汉堡西餐",
           showCode: true,
         },
         {
-          name: "日料寿司",
+          name: "日韩料理",
           showCode: true,
         },
         {
-          name: "火锅香锅",
+          name: "香锅水煮",
           showCode: true,
         },
         {
@@ -153,7 +154,7 @@ export default {
           showCode: true,
         },
         {
-          name: "轻食沙拉",
+          name: "轻食小吃",
           showCode: true,
         },
       ],
@@ -186,7 +187,7 @@ export default {
       console.log("*")
       if(currentTab.value==0)currentTab.value='all'
       else currentTab.value=String(currentTab.value)
-      foodTopList(currentTab.value).then((res) => {
+      foodTopList(currentTab.value,num).then((res) => {
         console.log(res)
 
           array.value = res.data
@@ -217,7 +218,7 @@ export default {
       currentTab.value = index
       if(currentTab.value==0)currentTab.value='all'
       else currentTab.value=String(currentTab.value)
-      foodTopList(currentTab.value).then((res) => {
+      foodTopList(currentTab.value,num).then((res) => {
         console.log(res)
 
           array.value = res.data
@@ -260,7 +261,7 @@ export default {
   display:flex;
   flex-direction:row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: left;
   margin-top: 1%;
   padding-top: 5px;
   padding-left: 0.5%;
