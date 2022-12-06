@@ -24,8 +24,8 @@
 </view>
 
   <view class="text">
-    <view class="content">好吃好吃好吃好吃好吃好吃好吃好吃好吃
-      喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢
+    <view class="content">好吃好吃好吃好好吃好吃好吃
+      喜欢喜欢喜欢 喜欢喜欢喜欢 喜欢喜欢喜欢
       大家都来吃啊！！！大家都来吃啊！！！
     </view>
   </view>
@@ -38,7 +38,6 @@
   </view>
 
   <view class = "love">
-
     <image class = "like" :src=likeSrc.src v-on:click="doLikeClick" />
     <view class = "like_num">{{ array.like_nums }}</view>
     <image class = "collect" :src=collectSrc.src v-on:click="doCollectClick"/>
@@ -222,8 +221,8 @@ export default{
 .text
 {
   margin-top:3%;
-  margin-left:2%;
-  width: 96%;
+  margin-left:3%;
+  width: 94%;
   
   background-color: rgb(249, 249, 249);
   /* background-color: aqua; */
@@ -232,8 +231,9 @@ export default{
 }
 .content
 {
-  font-size:25px;
-  padding: 12px;
+  font-size:20px;
+  padding: 20px;
+  line-height: 30px;
 }
 .love{
   margin-left:58%;

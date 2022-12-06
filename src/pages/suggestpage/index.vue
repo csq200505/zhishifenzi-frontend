@@ -11,6 +11,7 @@
             :name = data.name
             :note = data.note
             :like_nums = data.like_nums
+            :x = arr[Math.floor((Math.random()*arr.length))]
       ></card>
     </view>
     <view class = "sub-card2" v-for="(data,index) in array"
@@ -20,6 +21,7 @@
             :name = data.name
             :note = data.note
             :like_nums = data.like_nums
+            :x = arr[Math.floor((Math.random()*arr.length))]
       ></card>
     </view>
     <view class = "sub-card3" v-for="(data,index) in array2"
@@ -29,6 +31,7 @@
             :name = data.name
             :note = data.note
             :like_nums = data.like_nums
+            :x = arr[Math.floor((Math.random()*arr.length))]
       ></card>
     </view>
   </view>
@@ -118,10 +121,12 @@ let id
 let array1 = ref([])
 let array2 = ref([])
 let array = ref([])
+let arr =['超级好吃！','饭友推荐~','今日最佳','大家快来！','多人收藏']
+
 export default {
   data() {
     return {
-      array1,array,array2
+      array1,array,array2,arr
     }
   },
   components:{

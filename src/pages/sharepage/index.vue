@@ -6,10 +6,10 @@
     </view>
     <view class = "tip">每次最多上传2/20张，单张文件不超过20MB</view>
     <view class="container_2">
-      <image src="https://i.postimg.cc/pd4rp2Yh/33.png" class = "picture1"/>
+      <image :src="imagePath" class = "picture1"/>
       <view class = "in_1">
         <input  class = 'in_word' v-model="value" type="text"  placeholder="请输入吃后感~" @input="onKeyInput" />
-        <image src = "/static/delete.png" class = "delete_1"/>
+        <image src = "/static/delete.png" class = "delete_1" @click="deleteWords"/>
       </view>
     </view>
 <!--    <view class="container_3">-->
@@ -27,8 +27,43 @@
 </template>
 
 <script>
+import {ref} from 'vue'
+
+const imagePath = ref("https://i.postimg.cc/pd4rp2Yh/33.png")
+const value = ref("")
+
 export default {
-  name: "index"
+  name: "index",
+  data(){
+    return{
+      imagePath,value
+    }
+  },
+  methods:{
+    uploadimage(){
+        uni.chooseImage({
+          success: (chooseImageRes) => {
+            const tempFilePaths = chooseImageRes.tempFilePaths;
+            imagePath.value = tempFilePaths[0]
+            // uni.uploadFile({
+            //   url: 'https://www.example.com/upload',
+            //   filePath: tempFilePaths[0],
+            //   name: 'file',
+            //   formData: {
+            //     'user': 'test'
+            //   },
+            //   success: (uploadFileRes) => {
+            //     console.log(uploadFileRes.data);
+            //   }
+            // });
+          }
+        });
+      },
+    deleteWords(){
+      value.value = ""
+    }
+  }
+
 }
 </script>
 
@@ -133,18 +168,20 @@ export default {
   width:80%;
 }
 .add{
-  padding-left: 20px;
+  /*padding-left: 10px;*/
+  text-align: center;
   height:30%;
-  width:37%;
-  font-size: 16px;
+  width: 40%;
+  font-size: 15px;
   background: #FBCA1F;
   border: 1px solid black;
 }
 .up{
-  padding-left: 20px;
+  /*padding-left: 20px;*/
+  text-align: center;
   height:30%;
-  width:37%;
-  font-size: 16px;
+  width: 38%;
+  font-size: 15px;
   background: #FBCA1F;
   border: 1px solid black;
 }

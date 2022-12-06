@@ -10,7 +10,7 @@
   <view class="outerBox">
     <div class="frontBox" :class="[item.showCode ? 'frontBox' : 'laterBox']" v-for="(item,index) in dataList" :key="index"
          @click="onCilck(index)">
-      <div style="margin-left: -6px">{{item.name}}</div>
+      <div>{{item.name}}</div>
     </div>
   </view>
 
@@ -22,6 +22,7 @@
           :name = data.name
           :note = data.note
           :like_nums = data.like_nums
+          :x = arr[Math.floor((Math.random()*arr.length))]
       ></card>
     </view>
   </view>
@@ -110,12 +111,15 @@ let id
 //   }
 // ])
 let array = ref([])
+let arr =['超级好吃！','饭友推荐~','今日最佳','大家快来！','多人收藏']
+
 const currentTab = ref(0)
 export default {
   data() {
     return {
       array,
       currentTab,
+      arr,
       dataList: [
         {
           name: "全部美食",
@@ -257,7 +261,7 @@ export default {
   flex-direction:row;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin-top: 30%;
+  margin-top: 1%;
   padding-top: 5px;
   padding-left: 0.5%;
   padding-right: 0.5%;
@@ -275,14 +279,15 @@ export default {
 }
 
 .outerBox {
-  position: absolute;
+  position: relative;
+  width: 100%;
   display: flex;
+  margin-top: 1%;
 }
 /* 公共样式 */
 .frontBox {
   cursor: pointer;
-  width: 80px;
-  padding: 14px 12.5px;
+  padding: 2%;
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -290,28 +295,28 @@ export default {
   justify-content: space-between;
   align-content: center;
   font-weight: bold;
-  margin-right: 20px;
   font-size: 17px;
   text-align: center;
+  margin-left: 1.9%;
 }
 /* 默认样式 */
 .frontBox {
   font-weight:normal;
   background: white;
   color: black;
-  width:5px ;
-  height:70px;
-  margin-left: -4.5px;
-  ;
+  width:5% ;
+  height:90px;
+
 }
 /* 点击后样式 */
 .laterBox {
   background: #FBCA1F;
   color: #151515;
-  width:5px ;
-  height:70px;
+  width:5% ;
+  height:90px;
   font-weight:normal;
   align-content: center;
+
 }
 
 </style>

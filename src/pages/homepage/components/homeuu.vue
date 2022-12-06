@@ -3,7 +3,7 @@
     <image class="tx" :src=img></image>
     <view class="text">
       <p class="p1">{{id}}</p>
-      <p class="p2">与你口味相似度{{similarity}}</p>
+      <p class="p2">与你口味相似度\n{{similarity}}</p>
     </view>
   </view>
 </template>

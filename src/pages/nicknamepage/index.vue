@@ -13,10 +13,10 @@
 </template>
 
 <script>
-import {creatNick, getDish} from "../../service/apis";
+import {creatNick} from "../../service/apis";
 import { ref } from 'vue';
 
-const id = ref("")
+const id = ref('')
 let openId = ""
 
 export default {
@@ -31,23 +31,35 @@ export default {
       console.log(openId)
 
       openId='oYFMI6geWmmVdW3JtpHfpLzJk6kE'
-      creatNick(id.value,openId).then((res)=>{
-        console.log(res)
-        if(res.code==1){
-          uni.setStorage({key: "id", data: id.value})
-          uni.navigateTo({
-            url: '../labelpage/index'
-          })
-        }else{
-          //该用户名已存在
-          uni.showToast({
-                title: '用户名已存在!',
-                icon: 'error',
-                duration:2000
-              }
-          )
-        }
-      })
+      if(id.value==''){
+        //用户名不能为空
+        uni.showToast({
+              title: '用户名不能为空！',
+              icon: 'error',
+              duration: 2000
+            }
+        )
+      }
+      else {
+        creatNick(id.value, openId).then((res) => {
+          console.log(res)
+          if (res.code == 1) {
+            uni.setStorage({key: "id", data: id.value})
+            uni.navigateTo({
+              url: '../labelpage/index'
+            })
+          } else {
+            //该用户名已存在
+            uni.showToast({
+                  title: '用户名已存在!',
+                  icon: 'error',
+                  duration: 2000
+                }
+            )
+          }
+        })
+      }
+
       uni.navigateTo({
         url: '../labelpage/index'
       })

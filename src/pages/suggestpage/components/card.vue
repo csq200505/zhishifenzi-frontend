@@ -7,7 +7,7 @@
         <view class = "foodname">{{name}}</view>
         <image class = "loc" src="/static/location.png" />
       </view>
-      <view class = "footnote">超好吃</view>
+      <view class = "footnote">{{x}}</view>
 
       <!--      <view class = "special" v-if="special == 0?true:false">饭友推荐！</view>-->
 
@@ -19,16 +19,17 @@
   </view>
 </template>
 <script>
+
 export default {
   props:{
     img:String,
     name:String,
     note:String,
-    like_nums:Number
+    like_nums:Number,
+    x:String
   },
   data() {
     return {
-      title: 'card',
     }
   },
   methods: {

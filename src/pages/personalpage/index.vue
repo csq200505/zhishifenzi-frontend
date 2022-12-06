@@ -8,8 +8,7 @@
         <image class="tx" :src=touxiang v-on:click="toPerinfo"></image>
         <view class="INFO">
           <p class="name">{{ id }}</p>
-<!--          <p class="motto">{{ signature }}</p>-->
-          <p class="motto">谁动了我的奶酪</p>
+          <p class="motto">{{ signature }}</p>
         </view>
       </view>
     </view>
@@ -82,12 +81,15 @@ export default {
     getData: () => {
       personalInfo(id.value).then((res) => {
         if (res.code == 1) {
-          if(res.data[0].tximg != null){
-            touxiang.value = res.data[0].tximg
-          }
+          touxiang.value = res.data[0].tximg
           signature.value = res.data[0].signature
+          if(signature.value==null)signature.value='....'
           array.value = res.data[0].collectionlist
+          if(id.value.length>10)id.value=id.value.slice(0,10)+'...'
+          if(signature.value.length>25)signature.value=signature.value.slice(0,25)+'...'
         } else {
+          if(id.value.length>10)id.value=id.value.slice(0,10)+'...'
+          if(signature.value.length>25)signature.value=signature.value.slice(0,25)+'...'
         }
       })
     },
@@ -119,7 +121,7 @@ width: 100%;
 .whiteBackgound {
 width: 100%;
 height: 28%;
-position:absolute;
+position:relative;
 background:white;
 margin-top: 0%;
 background-repeat: no-repeat;
@@ -128,12 +130,13 @@ border-radius:35px;
 }
 
 .name{
-  font-size: larger;
-  font-weight: bolder;
+  font-size: 19px;
+  font-weight: bold;
   font-family: 'Times New Roman', Times, serif;
   position: absolute;
   top: 52%;
   left: 8%;
+  width: 210px;
 }
 .motto {
   font-family: 'Times New Roman', Times, serif;
@@ -141,20 +144,21 @@ border-radius:35px;
   position: absolute;
   top: 70%;
   left: 8%;
+  width: 210px;
 }
 .tx {
   height: 200rpx;
   width: 200rpx;
   border-radius:30px;
   position: absolute;
-  top: 45%;
-  left:60%;
+  top: 42%;
+  left:65%;
 }
 .collectlist{
-  top:28%;
+  margin-top:0%;
   width: 100%;
   display: flex;
-  position: absolute;
+  position: relative;
 }
 
 .like{
@@ -180,7 +184,7 @@ border-radius:35px;
   padding-left: 5%;
   padding-right: 4%;
   position: absolute;
-  top: 35%;
+  margin-top: 3%;
   width: 91%;
 }
 

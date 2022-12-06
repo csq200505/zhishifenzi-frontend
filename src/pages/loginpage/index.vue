@@ -12,7 +12,9 @@
   <image class="brand" src="/static/logosquare.jpg"></image>
   
   <div class="Agreement">
-    <label class="Pick"><checkbox color="#F79709" style="transform: scale(0.6);" checked></checkbox></label>
+    <label class="Pick">
+      <checkbox color="#F79709" style="transform: scale(0.6);" @click= "clickBox" :check = "checked"></checkbox>
+    </label>
     <span class="pickSent">选中代表您已同意</span>
     <span class="userAgree">《用户服务协议》</span>
     <span class="privacyAgree">《隐私权政策》</span>
@@ -24,76 +26,97 @@
 
 
 import {login} from "../../service/apis";
+import {ref} from "vue";
+
+const checked =ref(false)
 
 export default {
 
   onLoad() {
 
   },
-
-
-
+  data(){
+    return {
+     checked
+    }
+  },
 
   methods: {
+    clickBox(){
+      checked.value = !checked.value
+    },
     /**
      *
      * 获取用户信息
      */
     getUserInfo() {
-      // 展示加载框
-      uni.showLoading({
-        title: '加载中',
-      });
-      uni.getUserProfile({
-        desc: '登录后可同步数据',
-        success: async (obj) => {
-          console.log('obj', obj);
-          // 调用 action ，请求登录接口
-          // await this.login(obj);
-          uni.login({
-            provider: 'weixin',
-            success: (res) => {
-              console.log('code', res.code);
-              console.log(res)
-              if (res.errMsg == 'login:ok') {
-                //res.code='071XDd000iem0P1z0b0000W63Q2XDd0d'
-                login(res.code).then((resp) => {
+      console.log(checked.value)
+      if(!checked.value){
+        uni.showToast({
+              title: '请阅读用户协议',
+              icon: 'error',
+              duration: 2000
+            }
+        )
+      }
+
+      else {
+        // 展示加载框
+        uni.showLoading({
+          title: '加载中',
+        });
+        uni.getUserProfile({
+          desc: '登录后可同步数据',
+          success: async (obj) => {
+            console.log('obj', obj);
+            // 调用 action ，请求登录接口
+            // await this.login(obj);
+            uni.login({
+              provider: 'weixin',
+              success: (res) => {
+                console.log('code', res.code);
+                console.log(res)
+                if (res.errMsg == 'login:ok') {
+                  //res.code='071XDd000iem0P1z0b0000W63Q2XDd0d'
+                  login(res.code).then((resp) => {
                     if (resp.code == 0) {
                       uni.setStorage({key: "openId", data: resp.openid})
                       uni.navigateTo({
                         url: '../nicknamepage/index'
                       })
-                    } if (resp.code==1) {
+                    }
+                    if (resp.code == 1) {
                       uni.setStorage({key: "id", data: "小明"})
                       uni.switchTab({
                         url: '../homepage/index'
                       })
-                    }else{
+                    } else {
 
-                  }
+                    }
 
-                  console.log(resp)
-                })
+                    console.log(resp)
+                  })
 
-                uni.navigateTo({
-                  url: '../nicknamepage/index'
-                })
-              }
-            },
-          });
-        },
-        fail: () => {
-          uni.showToast({
-            title: '授权已取消',
-            icon: 'error',
-            mask: true,
-          });
-        },
-        complete: () => {
-          // 隐藏loading
-          uni.hideLoading();
-        },
-      });
+                  uni.navigateTo({
+                    url: '../nicknamepage/index'
+                  })
+                }
+              },
+            });
+          },
+          fail: () => {
+            uni.showToast({
+              title: '授权已取消',
+              icon: 'error',
+              mask: true,
+            });
+          },
+          complete: () => {
+            // 隐藏loading
+            uni.hideLoading();
+          },
+        });
+      }
     },
 
     toLabel: () => {               //跳转到登录页面
