@@ -59,7 +59,7 @@ export const setInfo = (id,head,sex,identity,signature) => {
     })
 }
 export const personalInfo = (id) => {
-    return postMethod("/user/person_imformation",{
+    return postMethod("/user/person_information",{
         id,
 
     })

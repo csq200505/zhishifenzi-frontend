@@ -17,23 +17,28 @@
 <div class="sex">
   <span class="sex_word">性别</span>
 </div>
-<label class="male"><checkbox style="transform: scale(0.7)" color="#F79709" :checked="checkSex(1)" @click="clickSex(1)">男</checkbox></label>
-<label class="female"><checkbox style="transform: scale(0.7)" color="#F79709" :checked="checkSex(2)" @click="clickSex(2)">女</checkbox></label>
-
+  <checkbox-group @change = "clickSex(1)" >
+    <label class="male"><checkbox style="transform: scale(0.7)" color="#F79709" :checked="checkSex(1)">男</checkbox></label>
+  </checkbox-group>
+  <checkbox-group @change = "clickSex(2)" >
+    <label class="female"><checkbox style="transform: scale(0.7)" color="#F79709" :checked="checkSex(2)">女</checkbox></label>
+    </checkbox-group>
 <!-- 身份 -->
 <div class="birthday">
   <span class="bir_word">身份</span>
 </div>
-<label class="student"><checkbox style="transform: scale(0.7)" color="#F79709" :checked = "checkIndentity(1)" @click = "clickIdentity(1)">学生</checkbox></label>
-<label class="staff"><checkbox style="transform: scale(0.7)" color="#F79709" :checked = "checkIndentity(2)" @click = "clickIdentity(2)">教职工</checkbox></label>
-
-
+  <checkbox-group @change = "clickIdentity(1)" >
+    <label class="student"><checkbox style="transform: scale(0.7)" color="#F79709" :checked = "checkIdentity(1)">学生</checkbox></label>
+  </checkbox-group>
+  <checkbox-group @change = "clickIdentity(2)" >
+    <label class="staff"><checkbox style="transform: scale(0.7)" color="#F79709" :checked = "checkIdentity(2)">教职工</checkbox></label>
+  </checkbox-group>
 <!-- 签名 -->
 <div class="sentence">
   <span class="sen_word">签名</span>
   <div class="sen_content">
     <input type="text" placeholder="谁动了我的奶酪？"
-         v-model=signiture
+         v-model=signature
     >
   </div>
 </div>
@@ -54,8 +59,8 @@ const checkSex = (value) => {
   return false;
 }
 
-const checkIndentity = (value) =>{
-  if(value === indentity.value){
+const checkIdentity = (value) =>{
+  if(value === identity.value){
     return true;
   }
   return false;
@@ -70,15 +75,15 @@ const clickSex = (value) => {
 }
 
 const clickIdentity = (value) => {
-  if(value == indentity.value){
+  if(value == identity.value){
     return;
   }else{
-    indentity.value = value
+    identity.value = value
   }
 }
 
 const submit = () => {
-  setInfo(id.value,source.value,sex.value,indentity.value,signiture.value)
+  setInfo(id.value,source.value,sex.value,identity.value,signature.value)
       .then((res) => {
         if(res.code == 1){
           uni.showToast({
@@ -99,23 +104,23 @@ const id = ref("")
 
 const sex = ref(1)
 
-const indentity = ref(1)
+const identity = ref(1)
 
 const source = ref("/static/tx-1.png")
 
-const signiture = ref("")
+const signature = ref("")
 
 export default {
   name: "index",
   data(){
     return {
-      sex, indentity,
-      source, signiture,id
+      sex, identity,
+      source, signature,id
     }
   },
   methods:{
     checkSex,
-    checkIndentity,
+    checkIdentity,
     clickSex,
     clickIdentity,
     submit,
@@ -126,7 +131,6 @@ export default {
       success:(res) => {
         id.value = res.data
         console.log(id.value)
-        id.value='小明'
         if(res.data == undefined){
           uni.navigateTo({
             url: '../loginpage/index'
@@ -135,8 +139,9 @@ export default {
           personalInfo(id.value).then((res) => {
             if(res.code == 1){
               source.value = res.data[0].tximg
-              // signiture.value = res.signiture
-
+              signature.value = res.data[0].signature
+              sex.value=res.data[0].sex
+              identity.value=res.data[0].identity
             }
           })
 
@@ -259,14 +264,15 @@ export default {
   margin-bottom: 7rpx;
   background: #FBCA1F;
   font-family: inherit;
-  padding: 0.6em 1.5em;
   font-weight: 900;
-  font-size: 8px;
+  font-size: 14px;
+  padding-left: 20px;
+  letter-spacing: 5px;
+  padding-top: 6px;
   line-height:1;
   border: 1px solid black;
   border-radius: 1.5em;
   box-shadow: 0.1em 0.1em;
   flex-direction: row;
-  font-size: x-small;
 }
 </style>

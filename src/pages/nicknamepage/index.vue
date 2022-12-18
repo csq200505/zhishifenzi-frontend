@@ -25,12 +25,25 @@ export default {
       id
     }
   },
+  onLoad(){
+    uni.getStorage({
+      key:'openId',
+      success:(res) => {
+        openId = res.data
+        if(res.data == undefined){
+          uni.navigateTo({
+            url: '../loginpage/index'
+          })
+        }
+      }
+    })
+  },
   methods: {
     toSubmit: () => {
       console.log(id.value)
       console.log(openId)
 
-      openId='oYFMI6geWmmVdW3JtpHfpLzJk6kE'
+      //openId='oYFMI6geWmmVdW3JtpHfpLzJk6kE'
       if(id.value==''){
         //用户名不能为空
         uni.showToast({
@@ -59,25 +72,12 @@ export default {
           }
         })
       }
-
-      uni.navigateTo({
-        url: '../labelpage/index'
-      })
+      //
+      // uni.navigateTo({
+      //   url: '../labelpage/index'
+      // })
     }
   },
-  onLoad(){
-    uni.getStorage({
-      key:'openId',
-      success:(res) => {
-        openId = res.data
-        if(res.data == undefined){
-          uni.navigateTo({
-            url: '../loginpage/index'
-          })
-        }
-      }
-    })
-  }
 }
 </script>
 

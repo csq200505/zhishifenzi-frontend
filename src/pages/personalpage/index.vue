@@ -22,7 +22,7 @@
             @click = "toDetail(data.food_id)">
         <card
             :img=data.img
-            :name=data.food_id
+            :name=data.food_name
             :tag=typeChange(data.tag)
         ></card>
       </view>
@@ -59,7 +59,6 @@ export default {
       key:'id',
       success:(res) => {
         id.value = res.data
-        id.value = '小明'
         if(res.data == undefined){
           uni.navigateTo({
             url: '../loginpage/index'

@@ -99,9 +99,9 @@
 				"text": ""
 			},
 			{
-				"selectedIconPath": "./static/guide.png",
-				"iconPath": "static/guide.png",
-				"pagePath": "pages/friendcirclepage/index",
+				"selectedIconPath": "./static/list.png",
+				"iconPath": "static/list.png",
+				"pagePath": "pages/toplistpage/index",
 				"text": ""
 			},
 			{

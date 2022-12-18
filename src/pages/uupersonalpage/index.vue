@@ -23,7 +23,15 @@
           </view>
           <view class="text4">
             <p class="tag4">美食标签 |</p>
-            <p class="foodTag">晓彭肥肠鸡</p>
+            <view class="food_label" v-if="tags">
+              <view class="foodlabel">{{ tags }}</view>
+            </view>
+            <view class="food_label1" v-if="tags1">
+              <view class="foodlabel">{{ tags1 }}</view>
+            </view>
+            <view class="food_label2">
+              <view class="foodlabel"></view>
+            </view>
           </view>
           <p class="line2"></p>
         </view>
@@ -41,7 +49,7 @@
           @click = "toDetail(data.food_id)">
       <card
           :img=data.img
-          :name=data.food_id
+          :name=data.food_name
           :tag=typeChange(data.tag)
       ></card>
     </view>
@@ -62,11 +70,11 @@ const signature = ref("...")
 const array = ref([])
 const sex = ref("男")
 const tags = ref([])
-
+const tags1 = ref([])
 export default {
   data(){
     return{
-      touxiang, signature,sex,tags,array, uuid
+      touxiang, signature,sex,tags,tags1,array, uuid
     }
 
   },
@@ -83,10 +91,35 @@ export default {
         signature.value = res.data[0].signature
         if(signature.value==null)signature.value=''
         array.value = res.data[0].collectionlist
+
+        if(res.data[0].sex==2){
+          res.data[0].sex='女'
+        } else{
+          res.data[0].sex='男'
+        }
         sex.value = res.data[0].sex
-        if(sex.value==null)sex.value='男'
+
         if(uuid.value.length>9)uuid.value=uuid.value.slice(0,9)+'...'
         if(signature.value.length>12)signature.value=signature.value.slice(0,12)+'...'
+        tags.value=res.data[0].tags
+        tags1.value=res.data[0].tags
+        if(tags.value.length>1){
+        tags.value=tags.value.slice(0,1)
+        tags.value=tags.value[0]
+          tags.value=typeName(tags.value)
+        tags1.value=tags1.value.slice(1,2)
+        tags1.value=tags1.value[0]
+          tags1.value=typeName(tags1.value)
+        }else if(tags.value.length===1){
+          tags.value=tags.value.slice(0,1)
+          tags.value=tags.value[0]
+          tags.value=typeName(tags.value)
+          tags1.value=null
+        }else{
+          tags.value=null
+          tags1.value=null
+        }
+
       }else{
         if(uuid.value.length>9)uuid.value=uuid.value.slice(0,9)+'...'
         if(signature.value.length>12)signature.value=signature.value.slice(0,12)+'...'
@@ -171,7 +204,7 @@ export default {
   margin-top: -2.5px;
   position: absolute;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   width: 45%;
   line-height: 25px;
 }
@@ -198,7 +231,7 @@ export default {
   margin-top: -1px;
   position: absolute;
   font-size: 16px;
-  font-weight: bold;
+  font-weight: normal;
   width: 180px;
 }
 .text4{
@@ -212,17 +245,43 @@ export default {
   position: absolute;
   font-size: 14px;
 }
-.foodTag{
-  margin-left: 80px;
-  margin-top: 0px;
-  position: absolute;
-  font-size: 16px;
-  font-weight: bold;
-  width: 180px;
+.food_label {
+  margin-top:-1%;
+  margin-left:20%;
+  width: 90px;
+  height: 30px;
+  border-radius:35px;
+  background: rgb(253, 205, 65,0.9);
+
+}
+.food_label1 {
+  margin-top:-1%;
+  margin-left:3%;
+  width: 90px;
+  height: 30px;
+  border-radius:35px;
+  background: rgb(253, 205, 65,0.9);
+
+}
+.food_label2 {
+  margin-top:-1%;
+  margin-left:3%;
+  width: 30px;
+  height: 30px;
+  border-radius:35px;
+  background: rgb(252, 252, 252);
+
+}
+.foodlabel {
+  font-size: 15px;
+  color: #303030;
+  text-align: center;
+  padding-top: 5px;
+  letter-spacing: 1px;
 }
 .line2{
   border-style: groove;
-  margin-top:10%;
+  margin-top:5%;
   margin-left: 5%;
   margin-right: 5%;
 }

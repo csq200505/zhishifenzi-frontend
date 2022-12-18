@@ -12,9 +12,11 @@
   <image class="brand" src="/static/logosquare.jpg"></image>
   
   <div class="Agreement">
-    <label class="Pick">
-      <checkbox color="#F79709" style="transform: scale(0.6);" @click= "clickBox" :check = "checked"></checkbox>
-    </label>
+    <checkbox-group @change = "clickBox" >
+      <label class="Pick">
+        <checkbox color="#F79709" style="transform: scale(0.6);" :check = "checked"></checkbox>
+      </label>
+    </checkbox-group>
     <span class="pickSent">选中代表您已同意</span>
     <span class="userAgree">《用户服务协议》</span>
     <span class="privacyAgree">《隐私权政策》</span>
@@ -86,20 +88,18 @@ export default {
                       })
                     }
                     if (resp.code == 1) {
-                      uni.setStorage({key: "id", data: "小明"})
+                      uni.setStorage({key: "id", data: resp.id})
                       uni.switchTab({
                         url: '../homepage/index'
                       })
-                    } else {
-
                     }
 
                     console.log(resp)
                   })
 
-                  uni.navigateTo({
-                    url: '../nicknamepage/index'
-                  })
+                  // uni.navigateTo({
+                  //   url: '../nicknamepage/index'
+                  // })
                 }
               },
             });

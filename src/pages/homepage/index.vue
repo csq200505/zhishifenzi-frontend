@@ -13,10 +13,10 @@
         <view class="weui-search-bar__cancel-btn" bindtap='方法名a'>搜索</view>
       </view>
     </view>
-    <view class="button_1_2">
-      <button class = "b1" v-on:click="toTopList">美食排行榜</button>
-      <button class = "b2">店面排行榜</button>
-    </view>
+<!--    <view class="button_1_2">-->
+<!--      <button class = "b1" v-on:click="toTopList">美食排行榜</button>-->
+<!--      <button class = "b2">店面排行榜</button>-->
+<!--    </view>-->
 
   </view>
 
@@ -144,11 +144,6 @@ export default {
 
   },
   methods: {
-    toTopList: () => {
-      uni.navigateTo({
-        url: '../toplistpage/index'
-      })
-    },
     toSuggest: () => {
       uni.navigateTo({
         url: '../suggestpage/index'
@@ -324,7 +319,8 @@ export default {
 /**index.vue.wxss**/
 .box_1{
   border: 1.5px solid #FBCA1F;
-  margin: 2%;
+  margin: 5%2%2%2%;
+
   padding: 2%;
 }
 .text_recommend{
@@ -342,7 +338,7 @@ export default {
 }
 .box_2{
   border: 1.5px solid #FBCA1F;
-  margin: 2%;
+  margin: 5%2%2%2%;
   padding: 2%;
   padding-bottom: 4%;
 }

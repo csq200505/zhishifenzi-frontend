@@ -13,7 +13,7 @@
     <view class="foodprice">
       <view class="food_lp">
       <view class="money_label">￥</view>
-      <view class="price">{{ array.price}}</view>
+      <view class="price">{{ array.food_price}}</view>
     </view>
   
   <view class="food_label">
@@ -34,7 +34,7 @@
 
   <view class="location">
     <image class="position" src="/static/position.png"></image>
-    <h1 class="res_name">{{ array.location}}</h1>
+    <h1 class="res_name">{{ array.location+array.food_shop}}</h1>
   </view>
 
   <view class = "love">
@@ -83,13 +83,12 @@ export default{
   },
   onLoad(e){
     food_id=e.foodid;
-    collectSrc.value.src = "/static/star_empty.png"
-    likeSrc.value.src = "/static/like_empty.png"
+    // collectSrc.value.src = "/static/star_empty.png"
+    // likeSrc.value.src = "/static/like_empty.png"
     uni.getStorage({
       key:'id',
       success:(res) => {
         id = res.data
-        id = '小明'
         console.log(id)
         if(res.data == undefined){
           uni.navigateTo({
@@ -113,6 +112,16 @@ export default{
           res.data[0].food_type = typeName(res.data[0].food_type)
           console.log(res.data[0])
           array.value = res.data[0]
+          if(array.value.collect_already==1){
+            collectSrc.value.src = "/static/star_full.png"
+          }else{
+            collectSrc.value.src = "/static/star_empty.png"
+          }
+          if(array.value.like_already==1){
+            likeSrc.value.src = "/static/like.png"
+          }else{
+            likeSrc.value.src = "/static/like_empty.png"
+          }
         }else{}
       })
     },
@@ -136,7 +145,11 @@ export default{
               like_nums:res.data[0].like_nums
           }
         }else if(res.code==2){
-          likeSrc.value={src:'/static/like_empty.png'}
+            uni.showToast({
+              title: '24小时内\r\n只能点赞一次哦',
+              icon: 'none',
+              duration: 2000
+            })
         }else{}
       })
     },
@@ -172,7 +185,7 @@ export default{
 } 
 .foodname
 {
-  font-size: 35px;
+  font-size: 30px;
 }
 .foodprice
 {
@@ -184,7 +197,7 @@ export default{
 {
   color:rgb(255, 77, 0);
   display: flex;
-  margin-top:1%;
+  margin-top:2%;
  
 }
 
@@ -206,8 +219,8 @@ export default{
 {
   margin-top:2%;
   margin-left:6%;
-  width: 100px;
-  height: 30px;
+  width: 110px;
+  height: 36px;
   border-radius:35px;
   background-color: #fbcb1fc5;
   
@@ -215,7 +228,9 @@ export default{
 .foodlabel
 {
   font-size: 20px;
-  margin-left:8%;
+  padding-top: 3px;
+  text-align: center;
+  letter-spacing: 1px;
 }
 
 .text

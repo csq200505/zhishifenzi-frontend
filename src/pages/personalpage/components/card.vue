@@ -60,29 +60,29 @@ export default {
   margin-left: 20px;
 }
 .text{
-  width: 45%;
+  width: 52%;
   /*background-color: #4cd964;*/
-  margin-left: 8%;
-  margin-top: 7%;
+  margin-left: 7%;
+  margin-top: 6%;
 }
 .p1 {
   display: flex;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: normal;
 }
 .food_label {
-  margin-top:6%;
+  margin-top:7%;
   margin-left:-2%;
-  width: 90px;
+  width: 85px;
   height: 30px;
   border-radius:35px;
   background-color: #fbcb1fc5;
 }
 .foodlabel {
-  font-size: 15px;
+  font-size: 14px;
   color: #303030;
   text-align: center;
-  padding-top: 5px;
+  padding-top: 6px;
   letter-spacing: 1px;
 }
 

@@ -42,6 +42,7 @@ export default {
   methods:{
     uploadimage(){
         uni.chooseImage({
+          count:1,
           success: (chooseImageRes) => {
             const tempFilePaths = chooseImageRes.tempFilePaths;
             imagePath.value = tempFilePaths[0]
