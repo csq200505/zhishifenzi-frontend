@@ -4,7 +4,7 @@
     <view class="container_1">
       <view class = "top_text">美味分享</view>
     </view>
-    <view class = "tip">每次最多上传2/20张，单张文件不超过20MB</view>
+
     <view class="container_2">
       <image :src="imagePath" class = "picture1"/>
       <view class = "in_1">
@@ -20,8 +20,8 @@
 <!--      </view>-->
 <!--    </view>-->
     <view class="container_4">
-      <button class="add" @click='uploadimage'>+继续添加</button>
-      <button class="up">确认上传</button>
+      <button class="add" @click='uploadimage'>选择图片</button>
+      <button class="up" @click='upload'>确认分享</button>
     </view>
   </view>
 </template>
@@ -40,6 +40,13 @@ export default {
     }
   },
   methods:{
+    upload(){
+      uni.showToast({
+            title: '上传成功!',
+            duration: 2000
+          }
+      )
+    },
     uploadimage(){
         uni.chooseImage({
           count:1,
@@ -94,7 +101,7 @@ export default {
   display: flex;
 
 
-  margin-top: 15%;
+  margin-top: 8%;
   margin-left: 5%;
   height:110px;
   width:90%;
@@ -163,7 +170,7 @@ export default {
 .container_4{
   display: flex;
   /*border: 1.5px solid #FBCA1F;*/
-  margin-top:90%;
+  margin-top:100%;
   margin-left: 10%;
   height:30%;
   width:80%;
@@ -172,7 +179,7 @@ export default {
   /*padding-left: 10px;*/
   text-align: center;
   height:30%;
-  width: 40%;
+  width: 36%;
   font-size: 15px;
   background: #FBCA1F;
   border: 1px solid black;
@@ -181,7 +188,7 @@ export default {
   /*padding-left: 20px;*/
   text-align: center;
   height:30%;
-  width: 38%;
+  width: 36%;
   font-size: 15px;
   background: #FBCA1F;
   border: 1px solid black;

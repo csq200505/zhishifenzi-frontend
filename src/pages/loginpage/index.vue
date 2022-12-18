@@ -96,10 +96,12 @@ export default {
 
                     console.log(resp)
                   })
-
+                  //测试
+                  // uni.setStorage({key: "openId", data: 'oYFMI6geWmmVdW3JtpHfpLzJk6kE'})
                   // uni.navigateTo({
                   //   url: '../nicknamepage/index'
                   // })
+                  //
                 }
               },
             });

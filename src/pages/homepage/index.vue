@@ -143,6 +143,13 @@ export default {
     })
 
   },
+  onPullDownRefresh(){
+    this.getData1();
+    this.getData2();
+    setTimeout(()=>{
+      uni.stopPullDownRefresh()
+    },1000)
+  },
   methods: {
     toSuggest: () => {
       uni.navigateTo({

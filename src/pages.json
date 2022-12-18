@@ -19,7 +19,10 @@
 			}
 		},
 		{
-			"path": "pages/homepage/index"
+			"path": "pages/homepage/index",
+			"style": {
+				"enablePullDownRefresh": true
+			}
 		},
 		{
 			"path": "pages/sharepage/index",
@@ -42,7 +45,8 @@
 		{
 			"path": "pages/suggestpage/index",
 			"style": {
-				"navigationBarTitleText": ""
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": true
 			}
 		},
 

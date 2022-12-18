@@ -248,8 +248,8 @@ export default {
 .food_label {
   margin-top:-1%;
   margin-left:20%;
-  width: 90px;
-  height: 30px;
+  width: 86px;
+  height: 28px;
   border-radius:35px;
   background: rgb(253, 205, 65,0.9);
 
@@ -257,8 +257,8 @@ export default {
 .food_label1 {
   margin-top:-1%;
   margin-left:3%;
-  width: 90px;
-  height: 30px;
+  width: 86px;
+  height: 28px;
   border-radius:35px;
   background: rgb(253, 205, 65,0.9);
 
@@ -267,13 +267,13 @@ export default {
   margin-top:-1%;
   margin-left:3%;
   width: 30px;
-  height: 30px;
+  height: 28px;
   border-radius:35px;
   background: rgb(252, 252, 252);
 
 }
 .foodlabel {
-  font-size: 15px;
+  font-size: 13px;
   color: #303030;
   text-align: center;
   padding-top: 5px;

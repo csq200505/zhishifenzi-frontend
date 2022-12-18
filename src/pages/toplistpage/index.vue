@@ -112,7 +112,7 @@ let id
 // ])
 let array = ref([])
 let arr =['超级好吃！','饭友推荐~','今日最佳','大家快来！','多人收藏']
-let num=30
+let num=100
 
 const currentTab = ref(0)
 export default {

@@ -132,7 +132,7 @@ export default {
   components:{
     card
   },
-  onLoad() {
+  onShow() {
     uni.getStorage({
       key:'id',
       success:(res) => {
@@ -146,6 +146,12 @@ export default {
       }
     })
 
+  },
+  onPullDownRefresh(){
+    this.getData();
+    setTimeout(()=>{
+      uni.stopPullDownRefresh()
+    },1000)
   },
   methods:{
     getData:() => {

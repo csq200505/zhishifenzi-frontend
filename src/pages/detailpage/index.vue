@@ -261,7 +261,7 @@ export default{
 {
   width: 85rpx;
   height: 85rpx;
-  margin-left:68%;
+  margin-left:62%;
   margin-top:-2%;
   position: absolute;
 }
