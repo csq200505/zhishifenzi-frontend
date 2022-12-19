@@ -95,7 +95,7 @@ let pageContent = reactive({
     ],
     array2:[
       {
-        img:"/static/tx-2.jpg",
+        img:"/static/tx-1.png",
         id:"再吃1口",
         similarity:90
       },
@@ -105,12 +105,12 @@ let pageContent = reactive({
         similarity:90
       },
       {
-        img:"/static/tx-2.jpg",
+        img:"/static/tx-1.png",
         id:"再吃3口",
         similarity:90
       },
       {
-        img:"/static/tx-2.jpg",
+        img:"/static/tx-1.png",
         id:"再吃4口",
         similarity:90
       }

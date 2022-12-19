@@ -156,7 +156,9 @@ border-radius:35px;
   height: 200rpx;
   width: 200rpx;
   border-radius:30px;
+  border: 2px solid #a5a5a5;
   position: absolute;
+  background: rgb(253, 205, 65,0.1);
   top: 42%;
   left:65%;
 }

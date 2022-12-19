@@ -1,7 +1,10 @@
 <template>
 <!-- 头像 -->
 <div class="photo">
-  <img class="img" :src =source>
+<!--  <img class="img" :src =source>-->
+  <button class="avatar-wapper" open-type="chooseAvatar" @chooseavatar="onChooseAvatar">
+    <image class="img" :src = "source"></image>
+  </button>
   <span class="word">头像</span>
 </div>
 
@@ -124,6 +127,10 @@ export default {
     clickSex,
     clickIdentity,
     submit,
+    onChooseAvatar:(e)=>{
+      source.value=e.detail.avatarUrl
+      console.log(source.value)
+    }
   },
   onLoad(){
     uni.getStorage({
@@ -155,6 +162,16 @@ export default {
 <style scoped>
 /* 头像 */
 .img {
+  display: flex;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  font-size: 8px;
+  position: absolute;
+  z-index: 99;
+  margin-left: -20%;
+}
+.avatar-wapper{
   display: flex;
   margin: 60px auto 10px auto;
   width: 80px;
